@@ -63,12 +63,12 @@ class Flag implements ModelInterface, ArrayAccess
 'tags' => '\Ayaya\FlagrClient\Model\Tag[]',
 'segments' => '\Ayaya\FlagrClient\Model\Segment[]',
 'variants' => '\Ayaya\FlagrClient\Model\Variant[]',
-'data_records_enabled' => 'bool',
-'entity_type' => 'string',
+'dataRecordsEnabled' => 'bool',
+'entityType' => 'string',
 'notes' => 'string',
-'created_by' => 'string',
-'updated_by' => 'string',
-'updated_at' => '\DateTime'    ];
+'createdBy' => 'string',
+'updatedBy' => 'string',
+'updatedAt' => '\DateTime'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -83,12 +83,12 @@ class Flag implements ModelInterface, ArrayAccess
 'tags' => null,
 'segments' => null,
 'variants' => null,
-'data_records_enabled' => null,
-'entity_type' => null,
+'dataRecordsEnabled' => null,
+'entityType' => null,
 'notes' => null,
-'created_by' => null,
-'updated_by' => null,
-'updated_at' => 'date-time'    ];
+'createdBy' => null,
+'updatedBy' => null,
+'updatedAt' => 'date-time'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -124,12 +124,12 @@ class Flag implements ModelInterface, ArrayAccess
 'tags' => 'tags',
 'segments' => 'segments',
 'variants' => 'variants',
-'data_records_enabled' => 'dataRecordsEnabled',
-'entity_type' => 'entityType',
+'dataRecordsEnabled' => 'dataRecordsEnabled',
+'entityType' => 'entityType',
 'notes' => 'notes',
-'created_by' => 'createdBy',
-'updated_by' => 'updatedBy',
-'updated_at' => 'updatedAt'    ];
+'createdBy' => 'createdBy',
+'updatedBy' => 'updatedBy',
+'updatedAt' => 'updatedAt'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -144,12 +144,12 @@ class Flag implements ModelInterface, ArrayAccess
 'tags' => 'setTags',
 'segments' => 'setSegments',
 'variants' => 'setVariants',
-'data_records_enabled' => 'setDataRecordsEnabled',
-'entity_type' => 'setEntityType',
+'dataRecordsEnabled' => 'setDataRecordsEnabled',
+'entityType' => 'setEntityType',
 'notes' => 'setNotes',
-'created_by' => 'setCreatedBy',
-'updated_by' => 'setUpdatedBy',
-'updated_at' => 'setUpdatedAt'    ];
+'createdBy' => 'setCreatedBy',
+'updatedBy' => 'setUpdatedBy',
+'updatedAt' => 'setUpdatedAt'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -164,12 +164,12 @@ class Flag implements ModelInterface, ArrayAccess
 'tags' => 'getTags',
 'segments' => 'getSegments',
 'variants' => 'getVariants',
-'data_records_enabled' => 'getDataRecordsEnabled',
-'entity_type' => 'getEntityType',
+'dataRecordsEnabled' => 'getDataRecordsEnabled',
+'entityType' => 'getEntityType',
 'notes' => 'getNotes',
-'created_by' => 'getCreatedBy',
-'updated_by' => 'getUpdatedBy',
-'updated_at' => 'getUpdatedAt'    ];
+'createdBy' => 'getCreatedBy',
+'updatedBy' => 'getUpdatedBy',
+'updatedAt' => 'getUpdatedAt'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -236,12 +236,12 @@ class Flag implements ModelInterface, ArrayAccess
         $this->container['tags'] = isset($data['tags']) ? $data['tags'] : null;
         $this->container['segments'] = isset($data['segments']) ? $data['segments'] : null;
         $this->container['variants'] = isset($data['variants']) ? $data['variants'] : null;
-        $this->container['data_records_enabled'] = isset($data['data_records_enabled']) ? $data['data_records_enabled'] : null;
-        $this->container['entity_type'] = isset($data['entity_type']) ? $data['entity_type'] : null;
+        $this->container['dataRecordsEnabled'] = isset($data['dataRecordsEnabled']) ? $data['dataRecordsEnabled'] : null;
+        $this->container['entityType'] = isset($data['entityType']) ? $data['entityType'] : null;
         $this->container['notes'] = isset($data['notes']) ? $data['notes'] : null;
-        $this->container['created_by'] = isset($data['created_by']) ? $data['created_by'] : null;
-        $this->container['updated_by'] = isset($data['updated_by']) ? $data['updated_by'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
+        $this->container['createdBy'] = isset($data['createdBy']) ? $data['createdBy'] : null;
+        $this->container['updatedBy'] = isset($data['updatedBy']) ? $data['updatedBy'] : null;
+        $this->container['updatedAt'] = isset($data['updatedAt']) ? $data['updatedAt'] : null;
     }
 
     /**
@@ -259,8 +259,8 @@ class Flag implements ModelInterface, ArrayAccess
         if ($this->container['enabled'] === null) {
             $invalidProperties[] = "'enabled' can't be null";
         }
-        if ($this->container['data_records_enabled'] === null) {
-            $invalidProperties[] = "'data_records_enabled' can't be null";
+        if ($this->container['dataRecordsEnabled'] === null) {
+            $invalidProperties[] = "'dataRecordsEnabled' can't be null";
         }
         return $invalidProperties;
     }
@@ -446,49 +446,49 @@ class Flag implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets data_records_enabled
+     * Gets dataRecordsEnabled
      *
      * @return bool
      */
     public function getDataRecordsEnabled()
     {
-        return $this->container['data_records_enabled'];
+        return $this->container['dataRecordsEnabled'];
     }
 
     /**
-     * Sets data_records_enabled
+     * Sets dataRecordsEnabled
      *
-     * @param bool $data_records_enabled enabled data records will get data logging in the metrics pipeline, for example, kafka.
+     * @param bool $dataRecordsEnabled enabled data records will get data logging in the metrics pipeline, for example, kafka.
      *
      * @return $this
      */
-    public function setDataRecordsEnabled($data_records_enabled)
+    public function setDataRecordsEnabled($dataRecordsEnabled)
     {
-        $this->container['data_records_enabled'] = $data_records_enabled;
+        $this->container['dataRecordsEnabled'] = $dataRecordsEnabled;
 
         return $this;
     }
 
     /**
-     * Gets entity_type
+     * Gets entityType
      *
      * @return string
      */
     public function getEntityType()
     {
-        return $this->container['entity_type'];
+        return $this->container['entityType'];
     }
 
     /**
-     * Sets entity_type
+     * Sets entityType
      *
-     * @param string $entity_type it will override the entityType in the evaluation logs if it's not empty
+     * @param string $entityType it will override the entityType in the evaluation logs if it's not empty
      *
      * @return $this
      */
-    public function setEntityType($entity_type)
+    public function setEntityType($entityType)
     {
-        $this->container['entity_type'] = $entity_type;
+        $this->container['entityType'] = $entityType;
 
         return $this;
     }
@@ -518,73 +518,73 @@ class Flag implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets created_by
+     * Gets createdBy
      *
      * @return string
      */
     public function getCreatedBy()
     {
-        return $this->container['created_by'];
+        return $this->container['createdBy'];
     }
 
     /**
-     * Sets created_by
+     * Sets createdBy
      *
-     * @param string $created_by created_by
+     * @param string $createdBy createdBy
      *
      * @return $this
      */
-    public function setCreatedBy($created_by)
+    public function setCreatedBy($createdBy)
     {
-        $this->container['created_by'] = $created_by;
+        $this->container['createdBy'] = $createdBy;
 
         return $this;
     }
 
     /**
-     * Gets updated_by
+     * Gets updatedBy
      *
      * @return string
      */
     public function getUpdatedBy()
     {
-        return $this->container['updated_by'];
+        return $this->container['updatedBy'];
     }
 
     /**
-     * Sets updated_by
+     * Sets updatedBy
      *
-     * @param string $updated_by updated_by
+     * @param string $updatedBy updatedBy
      *
      * @return $this
      */
-    public function setUpdatedBy($updated_by)
+    public function setUpdatedBy($updatedBy)
     {
-        $this->container['updated_by'] = $updated_by;
+        $this->container['updatedBy'] = $updatedBy;
 
         return $this;
     }
 
     /**
-     * Gets updated_at
+     * Gets updatedAt
      *
      * @return \DateTime
      */
     public function getUpdatedAt()
     {
-        return $this->container['updated_at'];
+        return $this->container['updatedAt'];
     }
 
     /**
-     * Sets updated_at
+     * Sets updatedAt
      *
-     * @param \DateTime $updated_at updated_at
+     * @param \DateTime $updatedAt updatedAt
      *
      * @return $this
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updatedAt)
     {
-        $this->container['updated_at'] = $updated_at;
+        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }

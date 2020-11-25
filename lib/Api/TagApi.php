@@ -90,15 +90,15 @@ class TagApi
      * Operation createTag
      *
      * @param  \Ayaya\FlagrClient\Model\CreateTagRequest $body create a tag (required)
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ayaya\FlagrClient\Model\Tag
      */
-    public function createTag($body, $flag_id)
+    public function createTag($body, $flagID)
     {
-        list($response) = $this->createTagWithHttpInfo($body, $flag_id);
+        list($response) = $this->createTagWithHttpInfo($body, $flagID);
         return $response;
     }
 
@@ -106,16 +106,16 @@ class TagApi
      * Operation createTagWithHttpInfo
      *
      * @param  \Ayaya\FlagrClient\Model\CreateTagRequest $body create a tag (required)
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ayaya\FlagrClient\Model\Tag, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createTagWithHttpInfo($body, $flag_id)
+    public function createTagWithHttpInfo($body, $flagID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Tag';
-        $request = $this->createTagRequest($body, $flag_id);
+        $request = $this->createTagRequest($body, $flagID);
 
         try {
             $options = $this->createHttpClientOption();
@@ -190,14 +190,14 @@ class TagApi
      * 
      *
      * @param  \Ayaya\FlagrClient\Model\CreateTagRequest $body create a tag (required)
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createTagAsync($body, $flag_id)
+    public function createTagAsync($body, $flagID)
     {
-        return $this->createTagAsyncWithHttpInfo($body, $flag_id)
+        return $this->createTagAsyncWithHttpInfo($body, $flagID)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -211,15 +211,15 @@ class TagApi
      * 
      *
      * @param  \Ayaya\FlagrClient\Model\CreateTagRequest $body create a tag (required)
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createTagAsyncWithHttpInfo($body, $flag_id)
+    public function createTagAsyncWithHttpInfo($body, $flagID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Tag';
-        $request = $this->createTagRequest($body, $flag_id);
+        $request = $this->createTagRequest($body, $flagID);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -262,12 +262,12 @@ class TagApi
      * Create request for operation 'createTag'
      *
      * @param  \Ayaya\FlagrClient\Model\CreateTagRequest $body create a tag (required)
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createTagRequest($body, $flag_id)
+    protected function createTagRequest($body, $flagID)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
@@ -275,10 +275,10 @@ class TagApi
                 'Missing the required parameter $body when calling createTag'
             );
         }
-        // verify the required parameter 'flag_id' is set
-        if ($flag_id === null || (is_array($flag_id) && count($flag_id) === 0)) {
+        // verify the required parameter 'flagID' is set
+        if ($flagID === null || (is_array($flagID) && count($flagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flag_id when calling createTag'
+                'Missing the required parameter $flagID when calling createTag'
             );
         }
 
@@ -291,10 +291,10 @@ class TagApi
 
 
         // path params
-        if ($flag_id !== null) {
+        if ($flagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'flagID' . '}',
-                ObjectSerializer::toPathValue($flag_id),
+                ObjectSerializer::toPathValue($flagID),
                 $resourcePath
             );
         }
@@ -369,32 +369,32 @@ class TagApi
     /**
      * Operation deleteTag
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $tag_id numeric ID of the tag (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $tagID numeric ID of the tag (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteTag($flag_id, $tag_id)
+    public function deleteTag($flagID, $tagID)
     {
-        $this->deleteTagWithHttpInfo($flag_id, $tag_id);
+        $this->deleteTagWithHttpInfo($flagID, $tagID);
     }
 
     /**
      * Operation deleteTagWithHttpInfo
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $tag_id numeric ID of the tag (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $tagID numeric ID of the tag (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteTagWithHttpInfo($flag_id, $tag_id)
+    public function deleteTagWithHttpInfo($flagID, $tagID)
     {
         $returnType = '';
-        $request = $this->deleteTagRequest($flag_id, $tag_id);
+        $request = $this->deleteTagRequest($flagID, $tagID);
 
         try {
             $options = $this->createHttpClientOption();
@@ -446,15 +446,15 @@ class TagApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $tag_id numeric ID of the tag (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $tagID numeric ID of the tag (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteTagAsync($flag_id, $tag_id)
+    public function deleteTagAsync($flagID, $tagID)
     {
-        return $this->deleteTagAsyncWithHttpInfo($flag_id, $tag_id)
+        return $this->deleteTagAsyncWithHttpInfo($flagID, $tagID)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -467,16 +467,16 @@ class TagApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $tag_id numeric ID of the tag (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $tagID numeric ID of the tag (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteTagAsyncWithHttpInfo($flag_id, $tag_id)
+    public function deleteTagAsyncWithHttpInfo($flagID, $tagID)
     {
         $returnType = '';
-        $request = $this->deleteTagRequest($flag_id, $tag_id);
+        $request = $this->deleteTagRequest($flagID, $tagID);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -504,24 +504,24 @@ class TagApi
     /**
      * Create request for operation 'deleteTag'
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $tag_id numeric ID of the tag (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $tagID numeric ID of the tag (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteTagRequest($flag_id, $tag_id)
+    protected function deleteTagRequest($flagID, $tagID)
     {
-        // verify the required parameter 'flag_id' is set
-        if ($flag_id === null || (is_array($flag_id) && count($flag_id) === 0)) {
+        // verify the required parameter 'flagID' is set
+        if ($flagID === null || (is_array($flagID) && count($flagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flag_id when calling deleteTag'
+                'Missing the required parameter $flagID when calling deleteTag'
             );
         }
-        // verify the required parameter 'tag_id' is set
-        if ($tag_id === null || (is_array($tag_id) && count($tag_id) === 0)) {
+        // verify the required parameter 'tagID' is set
+        if ($tagID === null || (is_array($tagID) && count($tagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $tag_id when calling deleteTag'
+                'Missing the required parameter $tagID when calling deleteTag'
             );
         }
 
@@ -534,18 +534,18 @@ class TagApi
 
 
         // path params
-        if ($flag_id !== null) {
+        if ($flagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'flagID' . '}',
-                ObjectSerializer::toPathValue($flag_id),
+                ObjectSerializer::toPathValue($flagID),
                 $resourcePath
             );
         }
         // path params
-        if ($tag_id !== null) {
+        if ($tagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'tagID' . '}',
-                ObjectSerializer::toPathValue($tag_id),
+                ObjectSerializer::toPathValue($tagID),
                 $resourcePath
             );
         }
@@ -619,15 +619,15 @@ class TagApi
      *
      * @param  int $limit the numbers of tags to return (optional)
      * @param  int $offset return tags given the offset, it should usually set together with limit (optional)
-     * @param  string $value_like return tags partially matching given value (optional)
+     * @param  string $valueLike return tags partially matching given value (optional)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ayaya\FlagrClient\Model\Tag[]
      */
-    public function findAllTags($limit = null, $offset = null, $value_like = null)
+    public function findAllTags($limit = null, $offset = null, $valueLike = null)
     {
-        list($response) = $this->findAllTagsWithHttpInfo($limit, $offset, $value_like);
+        list($response) = $this->findAllTagsWithHttpInfo($limit, $offset, $valueLike);
         return $response;
     }
 
@@ -636,16 +636,16 @@ class TagApi
      *
      * @param  int $limit the numbers of tags to return (optional)
      * @param  int $offset return tags given the offset, it should usually set together with limit (optional)
-     * @param  string $value_like return tags partially matching given value (optional)
+     * @param  string $valueLike return tags partially matching given value (optional)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ayaya\FlagrClient\Model\Tag[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function findAllTagsWithHttpInfo($limit = null, $offset = null, $value_like = null)
+    public function findAllTagsWithHttpInfo($limit = null, $offset = null, $valueLike = null)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Tag[]';
-        $request = $this->findAllTagsRequest($limit, $offset, $value_like);
+        $request = $this->findAllTagsRequest($limit, $offset, $valueLike);
 
         try {
             $options = $this->createHttpClientOption();
@@ -721,14 +721,14 @@ class TagApi
      *
      * @param  int $limit the numbers of tags to return (optional)
      * @param  int $offset return tags given the offset, it should usually set together with limit (optional)
-     * @param  string $value_like return tags partially matching given value (optional)
+     * @param  string $valueLike return tags partially matching given value (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findAllTagsAsync($limit = null, $offset = null, $value_like = null)
+    public function findAllTagsAsync($limit = null, $offset = null, $valueLike = null)
     {
-        return $this->findAllTagsAsyncWithHttpInfo($limit, $offset, $value_like)
+        return $this->findAllTagsAsyncWithHttpInfo($limit, $offset, $valueLike)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -743,15 +743,15 @@ class TagApi
      *
      * @param  int $limit the numbers of tags to return (optional)
      * @param  int $offset return tags given the offset, it should usually set together with limit (optional)
-     * @param  string $value_like return tags partially matching given value (optional)
+     * @param  string $valueLike return tags partially matching given value (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findAllTagsAsyncWithHttpInfo($limit = null, $offset = null, $value_like = null)
+    public function findAllTagsAsyncWithHttpInfo($limit = null, $offset = null, $valueLike = null)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Tag[]';
-        $request = $this->findAllTagsRequest($limit, $offset, $value_like);
+        $request = $this->findAllTagsRequest($limit, $offset, $valueLike);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -795,12 +795,12 @@ class TagApi
      *
      * @param  int $limit the numbers of tags to return (optional)
      * @param  int $offset return tags given the offset, it should usually set together with limit (optional)
-     * @param  string $value_like return tags partially matching given value (optional)
+     * @param  string $valueLike return tags partially matching given value (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function findAllTagsRequest($limit = null, $offset = null, $value_like = null)
+    protected function findAllTagsRequest($limit = null, $offset = null, $valueLike = null)
     {
 
         $resourcePath = '/tags';
@@ -819,8 +819,8 @@ class TagApi
             $queryParams['offset'] = ObjectSerializer::toQueryValue($offset, 'int64');
         }
         // query params
-        if ($value_like !== null) {
-            $queryParams['value_like'] = ObjectSerializer::toQueryValue($value_like, null);
+        if ($valueLike !== null) {
+            $queryParams['value_like'] = ObjectSerializer::toQueryValue($valueLike, null);
         }
 
 
@@ -891,31 +891,31 @@ class TagApi
     /**
      * Operation findTags
      *
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ayaya\FlagrClient\Model\Tag[]
      */
-    public function findTags($flag_id)
+    public function findTags($flagID)
     {
-        list($response) = $this->findTagsWithHttpInfo($flag_id);
+        list($response) = $this->findTagsWithHttpInfo($flagID);
         return $response;
     }
 
     /**
      * Operation findTagsWithHttpInfo
      *
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ayaya\FlagrClient\Model\Tag[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function findTagsWithHttpInfo($flag_id)
+    public function findTagsWithHttpInfo($flagID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Tag[]';
-        $request = $this->findTagsRequest($flag_id);
+        $request = $this->findTagsRequest($flagID);
 
         try {
             $options = $this->createHttpClientOption();
@@ -989,14 +989,14 @@ class TagApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findTagsAsync($flag_id)
+    public function findTagsAsync($flagID)
     {
-        return $this->findTagsAsyncWithHttpInfo($flag_id)
+        return $this->findTagsAsyncWithHttpInfo($flagID)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1009,15 +1009,15 @@ class TagApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findTagsAsyncWithHttpInfo($flag_id)
+    public function findTagsAsyncWithHttpInfo($flagID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Tag[]';
-        $request = $this->findTagsRequest($flag_id);
+        $request = $this->findTagsRequest($flagID);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1059,17 +1059,17 @@ class TagApi
     /**
      * Create request for operation 'findTags'
      *
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function findTagsRequest($flag_id)
+    protected function findTagsRequest($flagID)
     {
-        // verify the required parameter 'flag_id' is set
-        if ($flag_id === null || (is_array($flag_id) && count($flag_id) === 0)) {
+        // verify the required parameter 'flagID' is set
+        if ($flagID === null || (is_array($flagID) && count($flagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flag_id when calling findTags'
+                'Missing the required parameter $flagID when calling findTags'
             );
         }
 
@@ -1082,10 +1082,10 @@ class TagApi
 
 
         // path params
-        if ($flag_id !== null) {
+        if ($flagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'flagID' . '}',
-                ObjectSerializer::toPathValue($flag_id),
+                ObjectSerializer::toPathValue($flagID),
                 $resourcePath
             );
         }

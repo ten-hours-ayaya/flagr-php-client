@@ -56,13 +56,13 @@ class EvalContext implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'entity_id' => 'string',
-'entity_type' => 'string',
-'entity_context' => 'object',
-'enable_debug' => 'bool',
-'flag_id' => 'int',
-'flag_key' => 'string',
-'flag_tags' => 'string[]'    ];
+        'entityID' => 'string',
+'entityType' => 'string',
+'entityContext' => 'object',
+'enableDebug' => 'bool',
+'flagID' => 'int',
+'flagKey' => 'string',
+'flagTags' => 'string[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,13 +70,13 @@ class EvalContext implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'entity_id' => null,
-'entity_type' => null,
-'entity_context' => null,
-'enable_debug' => null,
-'flag_id' => 'int64',
-'flag_key' => null,
-'flag_tags' => null    ];
+        'entityID' => null,
+'entityType' => null,
+'entityContext' => null,
+'enableDebug' => null,
+'flagID' => 'int64',
+'flagKey' => null,
+'flagTags' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -105,13 +105,13 @@ class EvalContext implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'entity_id' => 'entityID',
-'entity_type' => 'entityType',
-'entity_context' => 'entityContext',
-'enable_debug' => 'enableDebug',
-'flag_id' => 'flagID',
-'flag_key' => 'flagKey',
-'flag_tags' => 'flagTags'    ];
+        'entityID' => 'entityID',
+'entityType' => 'entityType',
+'entityContext' => 'entityContext',
+'enableDebug' => 'enableDebug',
+'flagID' => 'flagID',
+'flagKey' => 'flagKey',
+'flagTags' => 'flagTags'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -119,13 +119,13 @@ class EvalContext implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'entity_id' => 'setEntityId',
-'entity_type' => 'setEntityType',
-'entity_context' => 'setEntityContext',
-'enable_debug' => 'setEnableDebug',
-'flag_id' => 'setFlagId',
-'flag_key' => 'setFlagKey',
-'flag_tags' => 'setFlagTags'    ];
+        'entityID' => 'setEntityID',
+'entityType' => 'setEntityType',
+'entityContext' => 'setEntityContext',
+'enableDebug' => 'setEnableDebug',
+'flagID' => 'setFlagID',
+'flagKey' => 'setFlagKey',
+'flagTags' => 'setFlagTags'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -133,13 +133,13 @@ class EvalContext implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'entity_id' => 'getEntityId',
-'entity_type' => 'getEntityType',
-'entity_context' => 'getEntityContext',
-'enable_debug' => 'getEnableDebug',
-'flag_id' => 'getFlagId',
-'flag_key' => 'getFlagKey',
-'flag_tags' => 'getFlagTags'    ];
+        'entityID' => 'getEntityID',
+'entityType' => 'getEntityType',
+'entityContext' => 'getEntityContext',
+'enableDebug' => 'getEnableDebug',
+'flagID' => 'getFlagID',
+'flagKey' => 'getFlagKey',
+'flagTags' => 'getFlagTags'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -199,13 +199,13 @@ class EvalContext implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['entity_id'] = isset($data['entity_id']) ? $data['entity_id'] : null;
-        $this->container['entity_type'] = isset($data['entity_type']) ? $data['entity_type'] : null;
-        $this->container['entity_context'] = isset($data['entity_context']) ? $data['entity_context'] : null;
-        $this->container['enable_debug'] = isset($data['enable_debug']) ? $data['enable_debug'] : null;
-        $this->container['flag_id'] = isset($data['flag_id']) ? $data['flag_id'] : null;
-        $this->container['flag_key'] = isset($data['flag_key']) ? $data['flag_key'] : null;
-        $this->container['flag_tags'] = isset($data['flag_tags']) ? $data['flag_tags'] : null;
+        $this->container['entityID'] = isset($data['entityID']) ? $data['entityID'] : null;
+        $this->container['entityType'] = isset($data['entityType']) ? $data['entityType'] : null;
+        $this->container['entityContext'] = isset($data['entityContext']) ? $data['entityContext'] : null;
+        $this->container['enableDebug'] = isset($data['enableDebug']) ? $data['enableDebug'] : null;
+        $this->container['flagID'] = isset($data['flagID']) ? $data['flagID'] : null;
+        $this->container['flagKey'] = isset($data['flagKey']) ? $data['flagKey'] : null;
+        $this->container['flagTags'] = isset($data['flagTags']) ? $data['flagTags'] : null;
     }
 
     /**
@@ -233,169 +233,169 @@ class EvalContext implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets entity_id
+     * Gets entityID
      *
      * @return string
      */
-    public function getEntityId()
+    public function getEntityID()
     {
-        return $this->container['entity_id'];
+        return $this->container['entityID'];
     }
 
     /**
-     * Sets entity_id
+     * Sets entityID
      *
-     * @param string $entity_id entityID is used to deterministically at random to evaluate the flag result. If it's empty, flagr will randomly generate one.
+     * @param string $entityID entityID is used to deterministically at random to evaluate the flag result. If it's empty, flagr will randomly generate one.
      *
      * @return $this
      */
-    public function setEntityId($entity_id)
+    public function setEntityID($entityID)
     {
-        $this->container['entity_id'] = $entity_id;
+        $this->container['entityID'] = $entityID;
 
         return $this;
     }
 
     /**
-     * Gets entity_type
+     * Gets entityType
      *
      * @return string
      */
     public function getEntityType()
     {
-        return $this->container['entity_type'];
+        return $this->container['entityType'];
     }
 
     /**
-     * Sets entity_type
+     * Sets entityType
      *
-     * @param string $entity_type entity_type
+     * @param string $entityType entityType
      *
      * @return $this
      */
-    public function setEntityType($entity_type)
+    public function setEntityType($entityType)
     {
-        $this->container['entity_type'] = $entity_type;
+        $this->container['entityType'] = $entityType;
 
         return $this;
     }
 
     /**
-     * Gets entity_context
+     * Gets entityContext
      *
      * @return object
      */
     public function getEntityContext()
     {
-        return $this->container['entity_context'];
+        return $this->container['entityContext'];
     }
 
     /**
-     * Sets entity_context
+     * Sets entityContext
      *
-     * @param object $entity_context entity_context
+     * @param object $entityContext entityContext
      *
      * @return $this
      */
-    public function setEntityContext($entity_context)
+    public function setEntityContext($entityContext)
     {
-        $this->container['entity_context'] = $entity_context;
+        $this->container['entityContext'] = $entityContext;
 
         return $this;
     }
 
     /**
-     * Gets enable_debug
+     * Gets enableDebug
      *
      * @return bool
      */
     public function getEnableDebug()
     {
-        return $this->container['enable_debug'];
+        return $this->container['enableDebug'];
     }
 
     /**
-     * Sets enable_debug
+     * Sets enableDebug
      *
-     * @param bool $enable_debug enable_debug
+     * @param bool $enableDebug enableDebug
      *
      * @return $this
      */
-    public function setEnableDebug($enable_debug)
+    public function setEnableDebug($enableDebug)
     {
-        $this->container['enable_debug'] = $enable_debug;
+        $this->container['enableDebug'] = $enableDebug;
 
         return $this;
     }
 
     /**
-     * Gets flag_id
+     * Gets flagID
      *
      * @return int
      */
-    public function getFlagId()
+    public function getFlagID()
     {
-        return $this->container['flag_id'];
+        return $this->container['flagID'];
     }
 
     /**
-     * Sets flag_id
+     * Sets flagID
      *
-     * @param int $flag_id flagID
+     * @param int $flagID flagID
      *
      * @return $this
      */
-    public function setFlagId($flag_id)
+    public function setFlagID($flagID)
     {
-        $this->container['flag_id'] = $flag_id;
+        $this->container['flagID'] = $flagID;
 
         return $this;
     }
 
     /**
-     * Gets flag_key
+     * Gets flagKey
      *
      * @return string
      */
     public function getFlagKey()
     {
-        return $this->container['flag_key'];
+        return $this->container['flagKey'];
     }
 
     /**
-     * Sets flag_key
+     * Sets flagKey
      *
-     * @param string $flag_key flagKey. flagID or flagKey will resolve to the same flag. Either works.
+     * @param string $flagKey flagKey. flagID or flagKey will resolve to the same flag. Either works.
      *
      * @return $this
      */
-    public function setFlagKey($flag_key)
+    public function setFlagKey($flagKey)
     {
-        $this->container['flag_key'] = $flag_key;
+        $this->container['flagKey'] = $flagKey;
 
         return $this;
     }
 
     /**
-     * Gets flag_tags
+     * Gets flagTags
      *
      * @return string[]
      */
     public function getFlagTags()
     {
-        return $this->container['flag_tags'];
+        return $this->container['flagTags'];
     }
 
     /**
-     * Sets flag_tags
+     * Sets flagTags
      *
-     * @param string[] $flag_tags flagTags. flagTags looks up flags by tag. Either works.
+     * @param string[] $flagTags flagTags. flagTags looks up flags by tag. Either works.
      *
      * @return $this
      */
-    public function setFlagTags($flag_tags)
+    public function setFlagTags($flagTags)
     {
-        $this->container['flag_tags'] = $flag_tags;
+        $this->container['flagTags'] = $flagTags;
 
         return $this;
     }

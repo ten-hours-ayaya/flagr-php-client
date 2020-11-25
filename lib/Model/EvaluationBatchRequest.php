@@ -57,10 +57,10 @@ class EvaluationBatchRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'entities' => '\Ayaya\FlagrClient\Model\EvaluationEntity[]',
-'enable_debug' => 'bool',
-'flag_i_ds' => 'int[]',
-'flag_keys' => 'string[]',
-'flag_tags' => 'string[]'    ];
+'enableDebug' => 'bool',
+'flagIDs' => 'int[]',
+'flagKeys' => 'string[]',
+'flagTags' => 'string[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -69,10 +69,10 @@ class EvaluationBatchRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'entities' => null,
-'enable_debug' => null,
-'flag_i_ds' => 'int64',
-'flag_keys' => null,
-'flag_tags' => null    ];
+'enableDebug' => null,
+'flagIDs' => 'int64',
+'flagKeys' => null,
+'flagTags' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -102,10 +102,10 @@ class EvaluationBatchRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'entities' => 'entities',
-'enable_debug' => 'enableDebug',
-'flag_i_ds' => 'flagIDs',
-'flag_keys' => 'flagKeys',
-'flag_tags' => 'flagTags'    ];
+'enableDebug' => 'enableDebug',
+'flagIDs' => 'flagIDs',
+'flagKeys' => 'flagKeys',
+'flagTags' => 'flagTags'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -114,10 +114,10 @@ class EvaluationBatchRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'entities' => 'setEntities',
-'enable_debug' => 'setEnableDebug',
-'flag_i_ds' => 'setFlagIDs',
-'flag_keys' => 'setFlagKeys',
-'flag_tags' => 'setFlagTags'    ];
+'enableDebug' => 'setEnableDebug',
+'flagIDs' => 'setFlagIDs',
+'flagKeys' => 'setFlagKeys',
+'flagTags' => 'setFlagTags'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -126,10 +126,10 @@ class EvaluationBatchRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'entities' => 'getEntities',
-'enable_debug' => 'getEnableDebug',
-'flag_i_ds' => 'getFlagIDs',
-'flag_keys' => 'getFlagKeys',
-'flag_tags' => 'getFlagTags'    ];
+'enableDebug' => 'getEnableDebug',
+'flagIDs' => 'getFlagIDs',
+'flagKeys' => 'getFlagKeys',
+'flagTags' => 'getFlagTags'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -190,10 +190,10 @@ class EvaluationBatchRequest implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['entities'] = isset($data['entities']) ? $data['entities'] : null;
-        $this->container['enable_debug'] = isset($data['enable_debug']) ? $data['enable_debug'] : null;
-        $this->container['flag_i_ds'] = isset($data['flag_i_ds']) ? $data['flag_i_ds'] : null;
-        $this->container['flag_keys'] = isset($data['flag_keys']) ? $data['flag_keys'] : null;
-        $this->container['flag_tags'] = isset($data['flag_tags']) ? $data['flag_tags'] : null;
+        $this->container['enableDebug'] = isset($data['enableDebug']) ? $data['enableDebug'] : null;
+        $this->container['flagIDs'] = isset($data['flagIDs']) ? $data['flagIDs'] : null;
+        $this->container['flagKeys'] = isset($data['flagKeys']) ? $data['flagKeys'] : null;
+        $this->container['flagTags'] = isset($data['flagTags']) ? $data['flagTags'] : null;
     }
 
     /**
@@ -248,97 +248,97 @@ class EvaluationBatchRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets enable_debug
+     * Gets enableDebug
      *
      * @return bool
      */
     public function getEnableDebug()
     {
-        return $this->container['enable_debug'];
+        return $this->container['enableDebug'];
     }
 
     /**
-     * Sets enable_debug
+     * Sets enableDebug
      *
-     * @param bool $enable_debug enable_debug
+     * @param bool $enableDebug enableDebug
      *
      * @return $this
      */
-    public function setEnableDebug($enable_debug)
+    public function setEnableDebug($enableDebug)
     {
-        $this->container['enable_debug'] = $enable_debug;
+        $this->container['enableDebug'] = $enableDebug;
 
         return $this;
     }
 
     /**
-     * Gets flag_i_ds
+     * Gets flagIDs
      *
      * @return int[]
      */
     public function getFlagIDs()
     {
-        return $this->container['flag_i_ds'];
+        return $this->container['flagIDs'];
     }
 
     /**
-     * Sets flag_i_ds
+     * Sets flagIDs
      *
-     * @param int[] $flag_i_ds flagIDs
+     * @param int[] $flagIDs flagIDs
      *
      * @return $this
      */
-    public function setFlagIDs($flag_i_ds)
+    public function setFlagIDs($flagIDs)
     {
-        $this->container['flag_i_ds'] = $flag_i_ds;
+        $this->container['flagIDs'] = $flagIDs;
 
         return $this;
     }
 
     /**
-     * Gets flag_keys
+     * Gets flagKeys
      *
      * @return string[]
      */
     public function getFlagKeys()
     {
-        return $this->container['flag_keys'];
+        return $this->container['flagKeys'];
     }
 
     /**
-     * Sets flag_keys
+     * Sets flagKeys
      *
-     * @param string[] $flag_keys flagKeys. Either flagIDs, flagKeys or flagTags works. If pass in multiples, Flagr may return duplicate results.
+     * @param string[] $flagKeys flagKeys. Either flagIDs, flagKeys or flagTags works. If pass in multiples, Flagr may return duplicate results.
      *
      * @return $this
      */
-    public function setFlagKeys($flag_keys)
+    public function setFlagKeys($flagKeys)
     {
-        $this->container['flag_keys'] = $flag_keys;
+        $this->container['flagKeys'] = $flagKeys;
 
         return $this;
     }
 
     /**
-     * Gets flag_tags
+     * Gets flagTags
      *
      * @return string[]
      */
     public function getFlagTags()
     {
-        return $this->container['flag_tags'];
+        return $this->container['flagTags'];
     }
 
     /**
-     * Sets flag_tags
+     * Sets flagTags
      *
-     * @param string[] $flag_tags flagTags. Either flagIDs, flagKeys or flagTags works. If pass in multiples, Flagr may return duplicate results.
+     * @param string[] $flagTags flagTags. Either flagIDs, flagKeys or flagTags works. If pass in multiples, Flagr may return duplicate results.
      *
      * @return $this
      */
-    public function setFlagTags($flag_tags)
+    public function setFlagTags($flagTags)
     {
-        $this->container['flag_tags'] = $flag_tags;
+        $this->container['flagTags'] = $flagTags;
 
         return $this;
     }

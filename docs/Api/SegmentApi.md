@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**putSegmentsReorder**](SegmentApi.md#putsegmentsreorder) | **PUT** /flags/{flagID}/segments/reorder | 
 
 # **createSegment**
-> \Ayaya\FlagrClient\Model\Segment createSegment($body, $flag_id)
+> \Ayaya\FlagrClient\Model\Segment createSegment($body, $flagID)
 
 
 
@@ -26,10 +26,10 @@ $apiInstance = new Ayaya\FlagrClient\Api\SegmentApi(
     new GuzzleHttp\Client()
 );
 $body = new \Ayaya\FlagrClient\Model\CreateSegmentRequest(); // \Ayaya\FlagrClient\Model\CreateSegmentRequest | create a segment under a flag
-$flag_id = 789; // int | numeric ID of the flag to get
+$flagID = 789; // int | numeric ID of the flag to get
 
 try {
-    $result = $apiInstance->createSegment($body, $flag_id);
+    $result = $apiInstance->createSegment($body, $flagID);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SegmentApi->createSegment: ', $e->getMessage(), PHP_EOL;
@@ -42,7 +42,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\Ayaya\FlagrClient\Model\CreateSegmentRequest**](../Model/CreateSegmentRequest.md)| create a segment under a flag |
- **flag_id** | **int**| numeric ID of the flag to get |
+ **flagID** | **int**| numeric ID of the flag to get |
 
 ### Return type
 
@@ -60,7 +60,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteSegment**
-> deleteSegment($flag_id, $segment_id)
+> deleteSegment($flagID, $segmentID)
 
 
 
@@ -74,11 +74,11 @@ $apiInstance = new Ayaya\FlagrClient\Api\SegmentApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$flag_id = 789; // int | numeric ID of the flag
-$segment_id = 789; // int | numeric ID of the segment
+$flagID = 789; // int | numeric ID of the flag
+$segmentID = 789; // int | numeric ID of the segment
 
 try {
-    $apiInstance->deleteSegment($flag_id, $segment_id);
+    $apiInstance->deleteSegment($flagID, $segmentID);
 } catch (Exception $e) {
     echo 'Exception when calling SegmentApi->deleteSegment: ', $e->getMessage(), PHP_EOL;
 }
@@ -89,8 +89,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **flag_id** | **int**| numeric ID of the flag |
- **segment_id** | **int**| numeric ID of the segment |
+ **flagID** | **int**| numeric ID of the flag |
+ **segmentID** | **int**| numeric ID of the segment |
 
 ### Return type
 
@@ -108,7 +108,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **findSegments**
-> \Ayaya\FlagrClient\Model\Segment[] findSegments($flag_id)
+> \Ayaya\FlagrClient\Model\Segment[] findSegments($flagID)
 
 
 
@@ -122,10 +122,10 @@ $apiInstance = new Ayaya\FlagrClient\Api\SegmentApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$flag_id = 789; // int | numeric ID of the flag to get
+$flagID = 789; // int | numeric ID of the flag to get
 
 try {
-    $result = $apiInstance->findSegments($flag_id);
+    $result = $apiInstance->findSegments($flagID);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SegmentApi->findSegments: ', $e->getMessage(), PHP_EOL;
@@ -137,7 +137,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **flag_id** | **int**| numeric ID of the flag to get |
+ **flagID** | **int**| numeric ID of the flag to get |
 
 ### Return type
 
@@ -155,7 +155,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putSegment**
-> \Ayaya\FlagrClient\Model\Segment putSegment($body, $flag_id, $segment_id)
+> \Ayaya\FlagrClient\Model\Segment putSegment($body, $flagID, $segmentID)
 
 
 
@@ -170,11 +170,11 @@ $apiInstance = new Ayaya\FlagrClient\Api\SegmentApi(
     new GuzzleHttp\Client()
 );
 $body = new \Ayaya\FlagrClient\Model\PutSegmentRequest(); // \Ayaya\FlagrClient\Model\PutSegmentRequest | update a segment
-$flag_id = 789; // int | numeric ID of the flag
-$segment_id = 789; // int | numeric ID of the segment
+$flagID = 789; // int | numeric ID of the flag
+$segmentID = 789; // int | numeric ID of the segment
 
 try {
-    $result = $apiInstance->putSegment($body, $flag_id, $segment_id);
+    $result = $apiInstance->putSegment($body, $flagID, $segmentID);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SegmentApi->putSegment: ', $e->getMessage(), PHP_EOL;
@@ -187,8 +187,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\Ayaya\FlagrClient\Model\PutSegmentRequest**](../Model/PutSegmentRequest.md)| update a segment |
- **flag_id** | **int**| numeric ID of the flag |
- **segment_id** | **int**| numeric ID of the segment |
+ **flagID** | **int**| numeric ID of the flag |
+ **segmentID** | **int**| numeric ID of the segment |
 
 ### Return type
 
@@ -206,7 +206,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putSegmentsReorder**
-> putSegmentsReorder($body, $flag_id)
+> putSegmentsReorder($body, $flagID)
 
 
 
@@ -221,10 +221,10 @@ $apiInstance = new Ayaya\FlagrClient\Api\SegmentApi(
     new GuzzleHttp\Client()
 );
 $body = new \Ayaya\FlagrClient\Model\PutSegmentReorderRequest(); // \Ayaya\FlagrClient\Model\PutSegmentReorderRequest | reorder segments
-$flag_id = 789; // int | numeric ID of the flag
+$flagID = 789; // int | numeric ID of the flag
 
 try {
-    $apiInstance->putSegmentsReorder($body, $flag_id);
+    $apiInstance->putSegmentsReorder($body, $flagID);
 } catch (Exception $e) {
     echo 'Exception when calling SegmentApi->putSegmentsReorder: ', $e->getMessage(), PHP_EOL;
 }
@@ -236,7 +236,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\Ayaya\FlagrClient\Model\PutSegmentReorderRequest**](../Model/PutSegmentReorderRequest.md)| reorder segments |
- **flag_id** | **int**| numeric ID of the flag |
+ **flagID** | **int**| numeric ID of the flag |
 
 ### Return type
 

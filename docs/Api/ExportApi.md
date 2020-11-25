@@ -53,7 +53,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getExportSqlite**
-> string getExportSqlite($exclude_snapshots)
+> string getExportSqlite($excludeSnapshots)
 
 
 
@@ -69,10 +69,10 @@ $apiInstance = new Ayaya\FlagrClient\Api\ExportApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$exclude_snapshots = true; // bool | export without snapshots data - useful for smaller db without snapshots
+$excludeSnapshots = true; // bool | export without snapshots data - useful for smaller db without snapshots
 
 try {
-    $result = $apiInstance->getExportSqlite($exclude_snapshots);
+    $result = $apiInstance->getExportSqlite($excludeSnapshots);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ExportApi->getExportSqlite: ', $e->getMessage(), PHP_EOL;
@@ -84,7 +84,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **exclude_snapshots** | **bool**| export without snapshots data - useful for smaller db without snapshots | [optional]
+ **excludeSnapshots** | **bool**| export without snapshots data - useful for smaller db without snapshots | [optional]
 
 ### Return type
 

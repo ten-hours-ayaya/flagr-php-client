@@ -56,9 +56,9 @@ class EvaluationEntity implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'entity_id' => 'string',
-'entity_type' => 'string',
-'entity_context' => 'object'    ];
+        'entityID' => 'string',
+'entityType' => 'string',
+'entityContext' => 'object'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,9 +66,9 @@ class EvaluationEntity implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'entity_id' => null,
-'entity_type' => null,
-'entity_context' => null    ];
+        'entityID' => null,
+'entityType' => null,
+'entityContext' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,9 +97,9 @@ class EvaluationEntity implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'entity_id' => 'entityID',
-'entity_type' => 'entityType',
-'entity_context' => 'entityContext'    ];
+        'entityID' => 'entityID',
+'entityType' => 'entityType',
+'entityContext' => 'entityContext'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -107,9 +107,9 @@ class EvaluationEntity implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'entity_id' => 'setEntityId',
-'entity_type' => 'setEntityType',
-'entity_context' => 'setEntityContext'    ];
+        'entityID' => 'setEntityID',
+'entityType' => 'setEntityType',
+'entityContext' => 'setEntityContext'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -117,9 +117,9 @@ class EvaluationEntity implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'entity_id' => 'getEntityId',
-'entity_type' => 'getEntityType',
-'entity_context' => 'getEntityContext'    ];
+        'entityID' => 'getEntityID',
+'entityType' => 'getEntityType',
+'entityContext' => 'getEntityContext'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -179,9 +179,9 @@ class EvaluationEntity implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['entity_id'] = isset($data['entity_id']) ? $data['entity_id'] : null;
-        $this->container['entity_type'] = isset($data['entity_type']) ? $data['entity_type'] : null;
-        $this->container['entity_context'] = isset($data['entity_context']) ? $data['entity_context'] : null;
+        $this->container['entityID'] = isset($data['entityID']) ? $data['entityID'] : null;
+        $this->container['entityType'] = isset($data['entityType']) ? $data['entityType'] : null;
+        $this->container['entityContext'] = isset($data['entityContext']) ? $data['entityContext'] : null;
     }
 
     /**
@@ -209,73 +209,73 @@ class EvaluationEntity implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets entity_id
+     * Gets entityID
      *
      * @return string
      */
-    public function getEntityId()
+    public function getEntityID()
     {
-        return $this->container['entity_id'];
+        return $this->container['entityID'];
     }
 
     /**
-     * Sets entity_id
+     * Sets entityID
      *
-     * @param string $entity_id entity_id
+     * @param string $entityID entityID
      *
      * @return $this
      */
-    public function setEntityId($entity_id)
+    public function setEntityID($entityID)
     {
-        $this->container['entity_id'] = $entity_id;
+        $this->container['entityID'] = $entityID;
 
         return $this;
     }
 
     /**
-     * Gets entity_type
+     * Gets entityType
      *
      * @return string
      */
     public function getEntityType()
     {
-        return $this->container['entity_type'];
+        return $this->container['entityType'];
     }
 
     /**
-     * Sets entity_type
+     * Sets entityType
      *
-     * @param string $entity_type entity_type
+     * @param string $entityType entityType
      *
      * @return $this
      */
-    public function setEntityType($entity_type)
+    public function setEntityType($entityType)
     {
-        $this->container['entity_type'] = $entity_type;
+        $this->container['entityType'] = $entityType;
 
         return $this;
     }
 
     /**
-     * Gets entity_context
+     * Gets entityContext
      *
      * @return object
      */
     public function getEntityContext()
     {
-        return $this->container['entity_context'];
+        return $this->container['entityContext'];
     }
 
     /**
-     * Sets entity_context
+     * Sets entityContext
      *
-     * @param object $entity_context entity_context
+     * @param object $entityContext entityContext
      *
      * @return $this
      */
-    public function setEntityContext($entity_context)
+    public function setEntityContext($entityContext)
     {
-        $this->container['entity_context'] = $entity_context;
+        $this->container['entityContext'] = $entityContext;
 
         return $this;
     }

@@ -57,7 +57,7 @@ class CreateSegmentRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'description' => 'string',
-'rollout_percent' => 'int'    ];
+'rolloutPercent' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,7 +66,7 @@ class CreateSegmentRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'description' => null,
-'rollout_percent' => 'int64'    ];
+'rolloutPercent' => 'int64'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -96,7 +96,7 @@ class CreateSegmentRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'description' => 'description',
-'rollout_percent' => 'rolloutPercent'    ];
+'rolloutPercent' => 'rolloutPercent'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -105,7 +105,7 @@ class CreateSegmentRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'description' => 'setDescription',
-'rollout_percent' => 'setRolloutPercent'    ];
+'rolloutPercent' => 'setRolloutPercent'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -114,7 +114,7 @@ class CreateSegmentRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'description' => 'getDescription',
-'rollout_percent' => 'getRolloutPercent'    ];
+'rolloutPercent' => 'getRolloutPercent'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -175,7 +175,7 @@ class CreateSegmentRequest implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['rollout_percent'] = isset($data['rollout_percent']) ? $data['rollout_percent'] : null;
+        $this->container['rolloutPercent'] = isset($data['rolloutPercent']) ? $data['rolloutPercent'] : null;
     }
 
     /**
@@ -190,8 +190,8 @@ class CreateSegmentRequest implements ModelInterface, ArrayAccess
         if ($this->container['description'] === null) {
             $invalidProperties[] = "'description' can't be null";
         }
-        if ($this->container['rollout_percent'] === null) {
-            $invalidProperties[] = "'rollout_percent' can't be null";
+        if ($this->container['rolloutPercent'] === null) {
+            $invalidProperties[] = "'rolloutPercent' can't be null";
         }
         return $invalidProperties;
     }
@@ -233,25 +233,25 @@ class CreateSegmentRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets rollout_percent
+     * Gets rolloutPercent
      *
      * @return int
      */
     public function getRolloutPercent()
     {
-        return $this->container['rollout_percent'];
+        return $this->container['rolloutPercent'];
     }
 
     /**
-     * Sets rollout_percent
+     * Sets rolloutPercent
      *
-     * @param int $rollout_percent rollout_percent
+     * @param int $rolloutPercent rolloutPercent
      *
      * @return $this
      */
-    public function setRolloutPercent($rollout_percent)
+    public function setRolloutPercent($rolloutPercent)
     {
-        $this->container['rollout_percent'] = $rollout_percent;
+        $this->container['rolloutPercent'] = $rolloutPercent;
 
         return $this;
     }

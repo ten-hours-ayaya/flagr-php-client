@@ -350,30 +350,30 @@ class FlagApi
     /**
      * Operation deleteFlag
      *
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteFlag($flag_id)
+    public function deleteFlag($flagID)
     {
-        $this->deleteFlagWithHttpInfo($flag_id);
+        $this->deleteFlagWithHttpInfo($flagID);
     }
 
     /**
      * Operation deleteFlagWithHttpInfo
      *
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteFlagWithHttpInfo($flag_id)
+    public function deleteFlagWithHttpInfo($flagID)
     {
         $returnType = '';
-        $request = $this->deleteFlagRequest($flag_id);
+        $request = $this->deleteFlagRequest($flagID);
 
         try {
             $options = $this->createHttpClientOption();
@@ -425,14 +425,14 @@ class FlagApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteFlagAsync($flag_id)
+    public function deleteFlagAsync($flagID)
     {
-        return $this->deleteFlagAsyncWithHttpInfo($flag_id)
+        return $this->deleteFlagAsyncWithHttpInfo($flagID)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -445,15 +445,15 @@ class FlagApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteFlagAsyncWithHttpInfo($flag_id)
+    public function deleteFlagAsyncWithHttpInfo($flagID)
     {
         $returnType = '';
-        $request = $this->deleteFlagRequest($flag_id);
+        $request = $this->deleteFlagRequest($flagID);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -481,17 +481,17 @@ class FlagApi
     /**
      * Create request for operation 'deleteFlag'
      *
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteFlagRequest($flag_id)
+    protected function deleteFlagRequest($flagID)
     {
-        // verify the required parameter 'flag_id' is set
-        if ($flag_id === null || (is_array($flag_id) && count($flag_id) === 0)) {
+        // verify the required parameter 'flagID' is set
+        if ($flagID === null || (is_array($flagID) && count($flagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flag_id when calling deleteFlag'
+                'Missing the required parameter $flagID when calling deleteFlag'
             );
         }
 
@@ -504,10 +504,10 @@ class FlagApi
 
 
         // path params
-        if ($flag_id !== null) {
+        if ($flagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'flagID' . '}',
-                ObjectSerializer::toPathValue($flag_id),
+                ObjectSerializer::toPathValue($flagID),
                 $resourcePath
             );
         }
@@ -583,7 +583,7 @@ class FlagApi
      * @param  bool $enabled return flags having given enabled status (optional)
      * @param  string $description return flags exactly matching given description (optional)
      * @param  string $tags return flags with the given tags (comma separated) (optional)
-     * @param  string $description_like return flags partially matching given description (optional)
+     * @param  string $descriptionLike return flags partially matching given description (optional)
      * @param  string $key return flags matching given key (optional)
      * @param  int $offset return flags given the offset, it should usually set together with limit (optional)
      * @param  bool $preload return flags with preloaded segments and variants (optional)
@@ -592,9 +592,9 @@ class FlagApi
      * @throws \InvalidArgumentException
      * @return \Ayaya\FlagrClient\Model\Flag[]
      */
-    public function findFlags($limit = null, $enabled = null, $description = null, $tags = null, $description_like = null, $key = null, $offset = null, $preload = null)
+    public function findFlags($limit = null, $enabled = null, $description = null, $tags = null, $descriptionLike = null, $key = null, $offset = null, $preload = null)
     {
-        list($response) = $this->findFlagsWithHttpInfo($limit, $enabled, $description, $tags, $description_like, $key, $offset, $preload);
+        list($response) = $this->findFlagsWithHttpInfo($limit, $enabled, $description, $tags, $descriptionLike, $key, $offset, $preload);
         return $response;
     }
 
@@ -605,7 +605,7 @@ class FlagApi
      * @param  bool $enabled return flags having given enabled status (optional)
      * @param  string $description return flags exactly matching given description (optional)
      * @param  string $tags return flags with the given tags (comma separated) (optional)
-     * @param  string $description_like return flags partially matching given description (optional)
+     * @param  string $descriptionLike return flags partially matching given description (optional)
      * @param  string $key return flags matching given key (optional)
      * @param  int $offset return flags given the offset, it should usually set together with limit (optional)
      * @param  bool $preload return flags with preloaded segments and variants (optional)
@@ -614,10 +614,10 @@ class FlagApi
      * @throws \InvalidArgumentException
      * @return array of \Ayaya\FlagrClient\Model\Flag[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function findFlagsWithHttpInfo($limit = null, $enabled = null, $description = null, $tags = null, $description_like = null, $key = null, $offset = null, $preload = null)
+    public function findFlagsWithHttpInfo($limit = null, $enabled = null, $description = null, $tags = null, $descriptionLike = null, $key = null, $offset = null, $preload = null)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Flag[]';
-        $request = $this->findFlagsRequest($limit, $enabled, $description, $tags, $description_like, $key, $offset, $preload);
+        $request = $this->findFlagsRequest($limit, $enabled, $description, $tags, $descriptionLike, $key, $offset, $preload);
 
         try {
             $options = $this->createHttpClientOption();
@@ -695,7 +695,7 @@ class FlagApi
      * @param  bool $enabled return flags having given enabled status (optional)
      * @param  string $description return flags exactly matching given description (optional)
      * @param  string $tags return flags with the given tags (comma separated) (optional)
-     * @param  string $description_like return flags partially matching given description (optional)
+     * @param  string $descriptionLike return flags partially matching given description (optional)
      * @param  string $key return flags matching given key (optional)
      * @param  int $offset return flags given the offset, it should usually set together with limit (optional)
      * @param  bool $preload return flags with preloaded segments and variants (optional)
@@ -703,9 +703,9 @@ class FlagApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findFlagsAsync($limit = null, $enabled = null, $description = null, $tags = null, $description_like = null, $key = null, $offset = null, $preload = null)
+    public function findFlagsAsync($limit = null, $enabled = null, $description = null, $tags = null, $descriptionLike = null, $key = null, $offset = null, $preload = null)
     {
-        return $this->findFlagsAsyncWithHttpInfo($limit, $enabled, $description, $tags, $description_like, $key, $offset, $preload)
+        return $this->findFlagsAsyncWithHttpInfo($limit, $enabled, $description, $tags, $descriptionLike, $key, $offset, $preload)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -722,7 +722,7 @@ class FlagApi
      * @param  bool $enabled return flags having given enabled status (optional)
      * @param  string $description return flags exactly matching given description (optional)
      * @param  string $tags return flags with the given tags (comma separated) (optional)
-     * @param  string $description_like return flags partially matching given description (optional)
+     * @param  string $descriptionLike return flags partially matching given description (optional)
      * @param  string $key return flags matching given key (optional)
      * @param  int $offset return flags given the offset, it should usually set together with limit (optional)
      * @param  bool $preload return flags with preloaded segments and variants (optional)
@@ -730,10 +730,10 @@ class FlagApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findFlagsAsyncWithHttpInfo($limit = null, $enabled = null, $description = null, $tags = null, $description_like = null, $key = null, $offset = null, $preload = null)
+    public function findFlagsAsyncWithHttpInfo($limit = null, $enabled = null, $description = null, $tags = null, $descriptionLike = null, $key = null, $offset = null, $preload = null)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Flag[]';
-        $request = $this->findFlagsRequest($limit, $enabled, $description, $tags, $description_like, $key, $offset, $preload);
+        $request = $this->findFlagsRequest($limit, $enabled, $description, $tags, $descriptionLike, $key, $offset, $preload);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -779,7 +779,7 @@ class FlagApi
      * @param  bool $enabled return flags having given enabled status (optional)
      * @param  string $description return flags exactly matching given description (optional)
      * @param  string $tags return flags with the given tags (comma separated) (optional)
-     * @param  string $description_like return flags partially matching given description (optional)
+     * @param  string $descriptionLike return flags partially matching given description (optional)
      * @param  string $key return flags matching given key (optional)
      * @param  int $offset return flags given the offset, it should usually set together with limit (optional)
      * @param  bool $preload return flags with preloaded segments and variants (optional)
@@ -787,7 +787,7 @@ class FlagApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function findFlagsRequest($limit = null, $enabled = null, $description = null, $tags = null, $description_like = null, $key = null, $offset = null, $preload = null)
+    protected function findFlagsRequest($limit = null, $enabled = null, $description = null, $tags = null, $descriptionLike = null, $key = null, $offset = null, $preload = null)
     {
 
         $resourcePath = '/flags';
@@ -814,8 +814,8 @@ class FlagApi
             $queryParams['tags'] = ObjectSerializer::toQueryValue($tags, null);
         }
         // query params
-        if ($description_like !== null) {
-            $queryParams['description_like'] = ObjectSerializer::toQueryValue($description_like, null);
+        if ($descriptionLike !== null) {
+            $queryParams['description_like'] = ObjectSerializer::toQueryValue($descriptionLike, null);
         }
         // query params
         if ($key !== null) {
@@ -898,31 +898,31 @@ class FlagApi
     /**
      * Operation getFlag
      *
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ayaya\FlagrClient\Model\Flag
      */
-    public function getFlag($flag_id)
+    public function getFlag($flagID)
     {
-        list($response) = $this->getFlagWithHttpInfo($flag_id);
+        list($response) = $this->getFlagWithHttpInfo($flagID);
         return $response;
     }
 
     /**
      * Operation getFlagWithHttpInfo
      *
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ayaya\FlagrClient\Model\Flag, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFlagWithHttpInfo($flag_id)
+    public function getFlagWithHttpInfo($flagID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Flag';
-        $request = $this->getFlagRequest($flag_id);
+        $request = $this->getFlagRequest($flagID);
 
         try {
             $options = $this->createHttpClientOption();
@@ -996,14 +996,14 @@ class FlagApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFlagAsync($flag_id)
+    public function getFlagAsync($flagID)
     {
-        return $this->getFlagAsyncWithHttpInfo($flag_id)
+        return $this->getFlagAsyncWithHttpInfo($flagID)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1016,15 +1016,15 @@ class FlagApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFlagAsyncWithHttpInfo($flag_id)
+    public function getFlagAsyncWithHttpInfo($flagID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Flag';
-        $request = $this->getFlagRequest($flag_id);
+        $request = $this->getFlagRequest($flagID);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1066,17 +1066,17 @@ class FlagApi
     /**
      * Create request for operation 'getFlag'
      *
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getFlagRequest($flag_id)
+    protected function getFlagRequest($flagID)
     {
-        // verify the required parameter 'flag_id' is set
-        if ($flag_id === null || (is_array($flag_id) && count($flag_id) === 0)) {
+        // verify the required parameter 'flagID' is set
+        if ($flagID === null || (is_array($flagID) && count($flagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flag_id when calling getFlag'
+                'Missing the required parameter $flagID when calling getFlag'
             );
         }
 
@@ -1089,10 +1089,10 @@ class FlagApi
 
 
         // path params
-        if ($flag_id !== null) {
+        if ($flagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'flagID' . '}',
-                ObjectSerializer::toPathValue($flag_id),
+                ObjectSerializer::toPathValue($flagID),
                 $resourcePath
             );
         }
@@ -1411,31 +1411,31 @@ class FlagApi
     /**
      * Operation getFlagSnapshots
      *
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ayaya\FlagrClient\Model\FlagSnapshot[]
      */
-    public function getFlagSnapshots($flag_id)
+    public function getFlagSnapshots($flagID)
     {
-        list($response) = $this->getFlagSnapshotsWithHttpInfo($flag_id);
+        list($response) = $this->getFlagSnapshotsWithHttpInfo($flagID);
         return $response;
     }
 
     /**
      * Operation getFlagSnapshotsWithHttpInfo
      *
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ayaya\FlagrClient\Model\FlagSnapshot[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFlagSnapshotsWithHttpInfo($flag_id)
+    public function getFlagSnapshotsWithHttpInfo($flagID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\FlagSnapshot[]';
-        $request = $this->getFlagSnapshotsRequest($flag_id);
+        $request = $this->getFlagSnapshotsRequest($flagID);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1509,14 +1509,14 @@ class FlagApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFlagSnapshotsAsync($flag_id)
+    public function getFlagSnapshotsAsync($flagID)
     {
-        return $this->getFlagSnapshotsAsyncWithHttpInfo($flag_id)
+        return $this->getFlagSnapshotsAsyncWithHttpInfo($flagID)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1529,15 +1529,15 @@ class FlagApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFlagSnapshotsAsyncWithHttpInfo($flag_id)
+    public function getFlagSnapshotsAsyncWithHttpInfo($flagID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\FlagSnapshot[]';
-        $request = $this->getFlagSnapshotsRequest($flag_id);
+        $request = $this->getFlagSnapshotsRequest($flagID);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1579,17 +1579,17 @@ class FlagApi
     /**
      * Create request for operation 'getFlagSnapshots'
      *
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getFlagSnapshotsRequest($flag_id)
+    protected function getFlagSnapshotsRequest($flagID)
     {
-        // verify the required parameter 'flag_id' is set
-        if ($flag_id === null || (is_array($flag_id) && count($flag_id) === 0)) {
+        // verify the required parameter 'flagID' is set
+        if ($flagID === null || (is_array($flagID) && count($flagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flag_id when calling getFlagSnapshots'
+                'Missing the required parameter $flagID when calling getFlagSnapshots'
             );
         }
 
@@ -1602,10 +1602,10 @@ class FlagApi
 
 
         // path params
-        if ($flag_id !== null) {
+        if ($flagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'flagID' . '}',
-                ObjectSerializer::toPathValue($flag_id),
+                ObjectSerializer::toPathValue($flagID),
                 $resourcePath
             );
         }
@@ -1678,15 +1678,15 @@ class FlagApi
      * Operation putFlag
      *
      * @param  \Ayaya\FlagrClient\Model\PutFlagRequest $body update a flag (required)
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ayaya\FlagrClient\Model\Flag
      */
-    public function putFlag($body, $flag_id)
+    public function putFlag($body, $flagID)
     {
-        list($response) = $this->putFlagWithHttpInfo($body, $flag_id);
+        list($response) = $this->putFlagWithHttpInfo($body, $flagID);
         return $response;
     }
 
@@ -1694,16 +1694,16 @@ class FlagApi
      * Operation putFlagWithHttpInfo
      *
      * @param  \Ayaya\FlagrClient\Model\PutFlagRequest $body update a flag (required)
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ayaya\FlagrClient\Model\Flag, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putFlagWithHttpInfo($body, $flag_id)
+    public function putFlagWithHttpInfo($body, $flagID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Flag';
-        $request = $this->putFlagRequest($body, $flag_id);
+        $request = $this->putFlagRequest($body, $flagID);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1778,14 +1778,14 @@ class FlagApi
      * 
      *
      * @param  \Ayaya\FlagrClient\Model\PutFlagRequest $body update a flag (required)
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putFlagAsync($body, $flag_id)
+    public function putFlagAsync($body, $flagID)
     {
-        return $this->putFlagAsyncWithHttpInfo($body, $flag_id)
+        return $this->putFlagAsyncWithHttpInfo($body, $flagID)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1799,15 +1799,15 @@ class FlagApi
      * 
      *
      * @param  \Ayaya\FlagrClient\Model\PutFlagRequest $body update a flag (required)
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putFlagAsyncWithHttpInfo($body, $flag_id)
+    public function putFlagAsyncWithHttpInfo($body, $flagID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Flag';
-        $request = $this->putFlagRequest($body, $flag_id);
+        $request = $this->putFlagRequest($body, $flagID);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1850,12 +1850,12 @@ class FlagApi
      * Create request for operation 'putFlag'
      *
      * @param  \Ayaya\FlagrClient\Model\PutFlagRequest $body update a flag (required)
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function putFlagRequest($body, $flag_id)
+    protected function putFlagRequest($body, $flagID)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
@@ -1863,10 +1863,10 @@ class FlagApi
                 'Missing the required parameter $body when calling putFlag'
             );
         }
-        // verify the required parameter 'flag_id' is set
-        if ($flag_id === null || (is_array($flag_id) && count($flag_id) === 0)) {
+        // verify the required parameter 'flagID' is set
+        if ($flagID === null || (is_array($flagID) && count($flagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flag_id when calling putFlag'
+                'Missing the required parameter $flagID when calling putFlag'
             );
         }
 
@@ -1879,10 +1879,10 @@ class FlagApi
 
 
         // path params
-        if ($flag_id !== null) {
+        if ($flagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'flagID' . '}',
-                ObjectSerializer::toPathValue($flag_id),
+                ObjectSerializer::toPathValue($flagID),
                 $resourcePath
             );
         }
@@ -1958,15 +1958,15 @@ class FlagApi
      * Operation setFlagEnabled
      *
      * @param  \Ayaya\FlagrClient\Model\SetFlagEnabledRequest $body set flag enabled state (required)
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ayaya\FlagrClient\Model\Flag
      */
-    public function setFlagEnabled($body, $flag_id)
+    public function setFlagEnabled($body, $flagID)
     {
-        list($response) = $this->setFlagEnabledWithHttpInfo($body, $flag_id);
+        list($response) = $this->setFlagEnabledWithHttpInfo($body, $flagID);
         return $response;
     }
 
@@ -1974,16 +1974,16 @@ class FlagApi
      * Operation setFlagEnabledWithHttpInfo
      *
      * @param  \Ayaya\FlagrClient\Model\SetFlagEnabledRequest $body set flag enabled state (required)
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ayaya\FlagrClient\Model\Flag, HTTP status code, HTTP response headers (array of strings)
      */
-    public function setFlagEnabledWithHttpInfo($body, $flag_id)
+    public function setFlagEnabledWithHttpInfo($body, $flagID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Flag';
-        $request = $this->setFlagEnabledRequest($body, $flag_id);
+        $request = $this->setFlagEnabledRequest($body, $flagID);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2058,14 +2058,14 @@ class FlagApi
      * 
      *
      * @param  \Ayaya\FlagrClient\Model\SetFlagEnabledRequest $body set flag enabled state (required)
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function setFlagEnabledAsync($body, $flag_id)
+    public function setFlagEnabledAsync($body, $flagID)
     {
-        return $this->setFlagEnabledAsyncWithHttpInfo($body, $flag_id)
+        return $this->setFlagEnabledAsyncWithHttpInfo($body, $flagID)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2079,15 +2079,15 @@ class FlagApi
      * 
      *
      * @param  \Ayaya\FlagrClient\Model\SetFlagEnabledRequest $body set flag enabled state (required)
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function setFlagEnabledAsyncWithHttpInfo($body, $flag_id)
+    public function setFlagEnabledAsyncWithHttpInfo($body, $flagID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Flag';
-        $request = $this->setFlagEnabledRequest($body, $flag_id);
+        $request = $this->setFlagEnabledRequest($body, $flagID);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2130,12 +2130,12 @@ class FlagApi
      * Create request for operation 'setFlagEnabled'
      *
      * @param  \Ayaya\FlagrClient\Model\SetFlagEnabledRequest $body set flag enabled state (required)
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function setFlagEnabledRequest($body, $flag_id)
+    protected function setFlagEnabledRequest($body, $flagID)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
@@ -2143,10 +2143,10 @@ class FlagApi
                 'Missing the required parameter $body when calling setFlagEnabled'
             );
         }
-        // verify the required parameter 'flag_id' is set
-        if ($flag_id === null || (is_array($flag_id) && count($flag_id) === 0)) {
+        // verify the required parameter 'flagID' is set
+        if ($flagID === null || (is_array($flagID) && count($flagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flag_id when calling setFlagEnabled'
+                'Missing the required parameter $flagID when calling setFlagEnabled'
             );
         }
 
@@ -2159,10 +2159,10 @@ class FlagApi
 
 
         // path params
-        if ($flag_id !== null) {
+        if ($flagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'flagID' . '}',
-                ObjectSerializer::toPathValue($flag_id),
+                ObjectSerializer::toPathValue($flagID),
                 $resourcePath
             );
         }

@@ -56,7 +56,7 @@ class SegmentDebugLog implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'segment_id' => 'int',
+        'segmentID' => 'int',
 'msg' => 'string'    ];
 
     /**
@@ -65,7 +65,7 @@ class SegmentDebugLog implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'segment_id' => 'int64',
+        'segmentID' => 'int64',
 'msg' => null    ];
 
     /**
@@ -95,7 +95,7 @@ class SegmentDebugLog implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'segment_id' => 'segmentID',
+        'segmentID' => 'segmentID',
 'msg' => 'msg'    ];
 
     /**
@@ -104,7 +104,7 @@ class SegmentDebugLog implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'segment_id' => 'setSegmentId',
+        'segmentID' => 'setSegmentID',
 'msg' => 'setMsg'    ];
 
     /**
@@ -113,7 +113,7 @@ class SegmentDebugLog implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'segment_id' => 'getSegmentId',
+        'segmentID' => 'getSegmentID',
 'msg' => 'getMsg'    ];
 
     /**
@@ -174,7 +174,7 @@ class SegmentDebugLog implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['segment_id'] = isset($data['segment_id']) ? $data['segment_id'] : null;
+        $this->container['segmentID'] = isset($data['segmentID']) ? $data['segmentID'] : null;
         $this->container['msg'] = isset($data['msg']) ? $data['msg'] : null;
     }
 
@@ -203,25 +203,25 @@ class SegmentDebugLog implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets segment_id
+     * Gets segmentID
      *
      * @return int
      */
-    public function getSegmentId()
+    public function getSegmentID()
     {
-        return $this->container['segment_id'];
+        return $this->container['segmentID'];
     }
 
     /**
-     * Sets segment_id
+     * Sets segmentID
      *
-     * @param int $segment_id segment_id
+     * @param int $segmentID segmentID
      *
      * @return $this
      */
-    public function setSegmentId($segment_id)
+    public function setSegmentID($segmentID)
     {
-        $this->container['segment_id'] = $segment_id;
+        $this->container['segmentID'] = $segmentID;
 
         return $this;
     }

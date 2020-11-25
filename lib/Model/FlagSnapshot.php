@@ -57,9 +57,9 @@ class FlagSnapshot implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'int',
-'updated_by' => 'string',
+'updatedBy' => 'string',
 'flag' => '\Ayaya\FlagrClient\Model\Flag',
-'updated_at' => 'string'    ];
+'updatedAt' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -68,9 +68,9 @@ class FlagSnapshot implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => 'int64',
-'updated_by' => null,
+'updatedBy' => null,
 'flag' => null,
-'updated_at' => null    ];
+'updatedAt' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -100,9 +100,9 @@ class FlagSnapshot implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-'updated_by' => 'updatedBy',
+'updatedBy' => 'updatedBy',
 'flag' => 'flag',
-'updated_at' => 'updatedAt'    ];
+'updatedAt' => 'updatedAt'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -111,9 +111,9 @@ class FlagSnapshot implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-'updated_by' => 'setUpdatedBy',
+'updatedBy' => 'setUpdatedBy',
 'flag' => 'setFlag',
-'updated_at' => 'setUpdatedAt'    ];
+'updatedAt' => 'setUpdatedAt'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -122,9 +122,9 @@ class FlagSnapshot implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-'updated_by' => 'getUpdatedBy',
+'updatedBy' => 'getUpdatedBy',
 'flag' => 'getFlag',
-'updated_at' => 'getUpdatedAt'    ];
+'updatedAt' => 'getUpdatedAt'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -185,9 +185,9 @@ class FlagSnapshot implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['updated_by'] = isset($data['updated_by']) ? $data['updated_by'] : null;
+        $this->container['updatedBy'] = isset($data['updatedBy']) ? $data['updatedBy'] : null;
         $this->container['flag'] = isset($data['flag']) ? $data['flag'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
+        $this->container['updatedAt'] = isset($data['updatedAt']) ? $data['updatedAt'] : null;
     }
 
     /**
@@ -205,8 +205,8 @@ class FlagSnapshot implements ModelInterface, ArrayAccess
         if ($this->container['flag'] === null) {
             $invalidProperties[] = "'flag' can't be null";
         }
-        if ($this->container['updated_at'] === null) {
-            $invalidProperties[] = "'updated_at' can't be null";
+        if ($this->container['updatedAt'] === null) {
+            $invalidProperties[] = "'updatedAt' can't be null";
         }
         return $invalidProperties;
     }
@@ -248,25 +248,25 @@ class FlagSnapshot implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets updated_by
+     * Gets updatedBy
      *
      * @return string
      */
     public function getUpdatedBy()
     {
-        return $this->container['updated_by'];
+        return $this->container['updatedBy'];
     }
 
     /**
-     * Sets updated_by
+     * Sets updatedBy
      *
-     * @param string $updated_by updated_by
+     * @param string $updatedBy updatedBy
      *
      * @return $this
      */
-    public function setUpdatedBy($updated_by)
+    public function setUpdatedBy($updatedBy)
     {
-        $this->container['updated_by'] = $updated_by;
+        $this->container['updatedBy'] = $updatedBy;
 
         return $this;
     }
@@ -296,25 +296,25 @@ class FlagSnapshot implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets updated_at
+     * Gets updatedAt
      *
      * @return string
      */
     public function getUpdatedAt()
     {
-        return $this->container['updated_at'];
+        return $this->container['updatedAt'];
     }
 
     /**
-     * Sets updated_at
+     * Sets updatedAt
      *
-     * @param string $updated_at updated_at
+     * @param string $updatedAt updatedAt
      *
      * @return $this
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updatedAt)
     {
-        $this->container['updated_at'] = $updated_at;
+        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }

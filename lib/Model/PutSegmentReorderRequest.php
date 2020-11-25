@@ -56,7 +56,7 @@ class PutSegmentReorderRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'segment_i_ds' => 'int[]'    ];
+        'segmentIDs' => 'int[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -64,7 +64,7 @@ class PutSegmentReorderRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'segment_i_ds' => 'int64'    ];
+        'segmentIDs' => 'int64'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -93,7 +93,7 @@ class PutSegmentReorderRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'segment_i_ds' => 'segmentIDs'    ];
+        'segmentIDs' => 'segmentIDs'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,7 +101,7 @@ class PutSegmentReorderRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'segment_i_ds' => 'setSegmentIDs'    ];
+        'segmentIDs' => 'setSegmentIDs'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -109,7 +109,7 @@ class PutSegmentReorderRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'segment_i_ds' => 'getSegmentIDs'    ];
+        'segmentIDs' => 'getSegmentIDs'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -169,7 +169,7 @@ class PutSegmentReorderRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['segment_i_ds'] = isset($data['segment_i_ds']) ? $data['segment_i_ds'] : null;
+        $this->container['segmentIDs'] = isset($data['segmentIDs']) ? $data['segmentIDs'] : null;
     }
 
     /**
@@ -181,8 +181,8 @@ class PutSegmentReorderRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['segment_i_ds'] === null) {
-            $invalidProperties[] = "'segment_i_ds' can't be null";
+        if ($this->container['segmentIDs'] === null) {
+            $invalidProperties[] = "'segmentIDs' can't be null";
         }
         return $invalidProperties;
     }
@@ -200,25 +200,25 @@ class PutSegmentReorderRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets segment_i_ds
+     * Gets segmentIDs
      *
      * @return int[]
      */
     public function getSegmentIDs()
     {
-        return $this->container['segment_i_ds'];
+        return $this->container['segmentIDs'];
     }
 
     /**
-     * Sets segment_i_ds
+     * Sets segmentIDs
      *
-     * @param int[] $segment_i_ds segment_i_ds
+     * @param int[] $segmentIDs segmentIDs
      *
      * @return $this
      */
-    public function setSegmentIDs($segment_i_ds)
+    public function setSegmentIDs($segmentIDs)
     {
-        $this->container['segment_i_ds'] = $segment_i_ds;
+        $this->container['segmentIDs'] = $segmentIDs;
 
         return $this;
     }

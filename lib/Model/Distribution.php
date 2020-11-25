@@ -58,8 +58,8 @@ class Distribution implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
 'percent' => 'int',
-'variant_key' => 'string',
-'variant_id' => 'int'    ];
+'variantKey' => 'string',
+'variantID' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -69,8 +69,8 @@ class Distribution implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => 'int64',
 'percent' => 'int64',
-'variant_key' => null,
-'variant_id' => 'int64'    ];
+'variantKey' => null,
+'variantID' => 'int64'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -101,8 +101,8 @@ class Distribution implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
 'percent' => 'percent',
-'variant_key' => 'variantKey',
-'variant_id' => 'variantID'    ];
+'variantKey' => 'variantKey',
+'variantID' => 'variantID'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -112,8 +112,8 @@ class Distribution implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
 'percent' => 'setPercent',
-'variant_key' => 'setVariantKey',
-'variant_id' => 'setVariantId'    ];
+'variantKey' => 'setVariantKey',
+'variantID' => 'setVariantID'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -123,8 +123,8 @@ class Distribution implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
 'percent' => 'getPercent',
-'variant_key' => 'getVariantKey',
-'variant_id' => 'getVariantId'    ];
+'variantKey' => 'getVariantKey',
+'variantID' => 'getVariantID'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -186,8 +186,8 @@ class Distribution implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['percent'] = isset($data['percent']) ? $data['percent'] : null;
-        $this->container['variant_key'] = isset($data['variant_key']) ? $data['variant_key'] : null;
-        $this->container['variant_id'] = isset($data['variant_id']) ? $data['variant_id'] : null;
+        $this->container['variantKey'] = isset($data['variantKey']) ? $data['variantKey'] : null;
+        $this->container['variantID'] = isset($data['variantID']) ? $data['variantID'] : null;
     }
 
     /**
@@ -202,11 +202,11 @@ class Distribution implements ModelInterface, ArrayAccess
         if ($this->container['percent'] === null) {
             $invalidProperties[] = "'percent' can't be null";
         }
-        if ($this->container['variant_key'] === null) {
-            $invalidProperties[] = "'variant_key' can't be null";
+        if ($this->container['variantKey'] === null) {
+            $invalidProperties[] = "'variantKey' can't be null";
         }
-        if ($this->container['variant_id'] === null) {
-            $invalidProperties[] = "'variant_id' can't be null";
+        if ($this->container['variantID'] === null) {
+            $invalidProperties[] = "'variantID' can't be null";
         }
         return $invalidProperties;
     }
@@ -272,49 +272,49 @@ class Distribution implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets variant_key
+     * Gets variantKey
      *
      * @return string
      */
     public function getVariantKey()
     {
-        return $this->container['variant_key'];
+        return $this->container['variantKey'];
     }
 
     /**
-     * Sets variant_key
+     * Sets variantKey
      *
-     * @param string $variant_key variant_key
+     * @param string $variantKey variantKey
      *
      * @return $this
      */
-    public function setVariantKey($variant_key)
+    public function setVariantKey($variantKey)
     {
-        $this->container['variant_key'] = $variant_key;
+        $this->container['variantKey'] = $variantKey;
 
         return $this;
     }
 
     /**
-     * Gets variant_id
+     * Gets variantID
      *
      * @return int
      */
-    public function getVariantId()
+    public function getVariantID()
     {
-        return $this->container['variant_id'];
+        return $this->container['variantID'];
     }
 
     /**
-     * Sets variant_id
+     * Sets variantID
      *
-     * @param int $variant_id variant_id
+     * @param int $variantID variantID
      *
      * @return $this
      */
-    public function setVariantId($variant_id)
+    public function setVariantID($variantID)
     {
-        $this->container['variant_id'] = $variant_id;
+        $this->container['variantID'] = $variantID;
 
         return $this;
     }

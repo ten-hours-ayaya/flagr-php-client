@@ -90,16 +90,16 @@ class ConstraintApi
      * Operation createConstraint
      *
      * @param  \Ayaya\FlagrClient\Model\CreateConstraintRequest $body create a constraint (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ayaya\FlagrClient\Model\Constraint
      */
-    public function createConstraint($body, $flag_id, $segment_id)
+    public function createConstraint($body, $flagID, $segmentID)
     {
-        list($response) = $this->createConstraintWithHttpInfo($body, $flag_id, $segment_id);
+        list($response) = $this->createConstraintWithHttpInfo($body, $flagID, $segmentID);
         return $response;
     }
 
@@ -107,17 +107,17 @@ class ConstraintApi
      * Operation createConstraintWithHttpInfo
      *
      * @param  \Ayaya\FlagrClient\Model\CreateConstraintRequest $body create a constraint (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ayaya\FlagrClient\Model\Constraint, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createConstraintWithHttpInfo($body, $flag_id, $segment_id)
+    public function createConstraintWithHttpInfo($body, $flagID, $segmentID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Constraint';
-        $request = $this->createConstraintRequest($body, $flag_id, $segment_id);
+        $request = $this->createConstraintRequest($body, $flagID, $segmentID);
 
         try {
             $options = $this->createHttpClientOption();
@@ -192,15 +192,15 @@ class ConstraintApi
      * 
      *
      * @param  \Ayaya\FlagrClient\Model\CreateConstraintRequest $body create a constraint (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createConstraintAsync($body, $flag_id, $segment_id)
+    public function createConstraintAsync($body, $flagID, $segmentID)
     {
-        return $this->createConstraintAsyncWithHttpInfo($body, $flag_id, $segment_id)
+        return $this->createConstraintAsyncWithHttpInfo($body, $flagID, $segmentID)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -214,16 +214,16 @@ class ConstraintApi
      * 
      *
      * @param  \Ayaya\FlagrClient\Model\CreateConstraintRequest $body create a constraint (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createConstraintAsyncWithHttpInfo($body, $flag_id, $segment_id)
+    public function createConstraintAsyncWithHttpInfo($body, $flagID, $segmentID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Constraint';
-        $request = $this->createConstraintRequest($body, $flag_id, $segment_id);
+        $request = $this->createConstraintRequest($body, $flagID, $segmentID);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -266,13 +266,13 @@ class ConstraintApi
      * Create request for operation 'createConstraint'
      *
      * @param  \Ayaya\FlagrClient\Model\CreateConstraintRequest $body create a constraint (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createConstraintRequest($body, $flag_id, $segment_id)
+    protected function createConstraintRequest($body, $flagID, $segmentID)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
@@ -280,16 +280,16 @@ class ConstraintApi
                 'Missing the required parameter $body when calling createConstraint'
             );
         }
-        // verify the required parameter 'flag_id' is set
-        if ($flag_id === null || (is_array($flag_id) && count($flag_id) === 0)) {
+        // verify the required parameter 'flagID' is set
+        if ($flagID === null || (is_array($flagID) && count($flagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flag_id when calling createConstraint'
+                'Missing the required parameter $flagID when calling createConstraint'
             );
         }
-        // verify the required parameter 'segment_id' is set
-        if ($segment_id === null || (is_array($segment_id) && count($segment_id) === 0)) {
+        // verify the required parameter 'segmentID' is set
+        if ($segmentID === null || (is_array($segmentID) && count($segmentID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $segment_id when calling createConstraint'
+                'Missing the required parameter $segmentID when calling createConstraint'
             );
         }
 
@@ -302,18 +302,18 @@ class ConstraintApi
 
 
         // path params
-        if ($flag_id !== null) {
+        if ($flagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'flagID' . '}',
-                ObjectSerializer::toPathValue($flag_id),
+                ObjectSerializer::toPathValue($flagID),
                 $resourcePath
             );
         }
         // path params
-        if ($segment_id !== null) {
+        if ($segmentID !== null) {
             $resourcePath = str_replace(
                 '{' . 'segmentID' . '}',
-                ObjectSerializer::toPathValue($segment_id),
+                ObjectSerializer::toPathValue($segmentID),
                 $resourcePath
             );
         }
@@ -388,34 +388,34 @@ class ConstraintApi
     /**
      * Operation deleteConstraint
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
-     * @param  int $constraint_id numeric ID of the constraint (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
+     * @param  int $constraintID numeric ID of the constraint (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteConstraint($flag_id, $segment_id, $constraint_id)
+    public function deleteConstraint($flagID, $segmentID, $constraintID)
     {
-        $this->deleteConstraintWithHttpInfo($flag_id, $segment_id, $constraint_id);
+        $this->deleteConstraintWithHttpInfo($flagID, $segmentID, $constraintID);
     }
 
     /**
      * Operation deleteConstraintWithHttpInfo
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
-     * @param  int $constraint_id numeric ID of the constraint (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
+     * @param  int $constraintID numeric ID of the constraint (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteConstraintWithHttpInfo($flag_id, $segment_id, $constraint_id)
+    public function deleteConstraintWithHttpInfo($flagID, $segmentID, $constraintID)
     {
         $returnType = '';
-        $request = $this->deleteConstraintRequest($flag_id, $segment_id, $constraint_id);
+        $request = $this->deleteConstraintRequest($flagID, $segmentID, $constraintID);
 
         try {
             $options = $this->createHttpClientOption();
@@ -467,16 +467,16 @@ class ConstraintApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
-     * @param  int $constraint_id numeric ID of the constraint (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
+     * @param  int $constraintID numeric ID of the constraint (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteConstraintAsync($flag_id, $segment_id, $constraint_id)
+    public function deleteConstraintAsync($flagID, $segmentID, $constraintID)
     {
-        return $this->deleteConstraintAsyncWithHttpInfo($flag_id, $segment_id, $constraint_id)
+        return $this->deleteConstraintAsyncWithHttpInfo($flagID, $segmentID, $constraintID)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -489,17 +489,17 @@ class ConstraintApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
-     * @param  int $constraint_id numeric ID of the constraint (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
+     * @param  int $constraintID numeric ID of the constraint (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteConstraintAsyncWithHttpInfo($flag_id, $segment_id, $constraint_id)
+    public function deleteConstraintAsyncWithHttpInfo($flagID, $segmentID, $constraintID)
     {
         $returnType = '';
-        $request = $this->deleteConstraintRequest($flag_id, $segment_id, $constraint_id);
+        $request = $this->deleteConstraintRequest($flagID, $segmentID, $constraintID);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -527,31 +527,31 @@ class ConstraintApi
     /**
      * Create request for operation 'deleteConstraint'
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
-     * @param  int $constraint_id numeric ID of the constraint (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
+     * @param  int $constraintID numeric ID of the constraint (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteConstraintRequest($flag_id, $segment_id, $constraint_id)
+    protected function deleteConstraintRequest($flagID, $segmentID, $constraintID)
     {
-        // verify the required parameter 'flag_id' is set
-        if ($flag_id === null || (is_array($flag_id) && count($flag_id) === 0)) {
+        // verify the required parameter 'flagID' is set
+        if ($flagID === null || (is_array($flagID) && count($flagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flag_id when calling deleteConstraint'
+                'Missing the required parameter $flagID when calling deleteConstraint'
             );
         }
-        // verify the required parameter 'segment_id' is set
-        if ($segment_id === null || (is_array($segment_id) && count($segment_id) === 0)) {
+        // verify the required parameter 'segmentID' is set
+        if ($segmentID === null || (is_array($segmentID) && count($segmentID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $segment_id when calling deleteConstraint'
+                'Missing the required parameter $segmentID when calling deleteConstraint'
             );
         }
-        // verify the required parameter 'constraint_id' is set
-        if ($constraint_id === null || (is_array($constraint_id) && count($constraint_id) === 0)) {
+        // verify the required parameter 'constraintID' is set
+        if ($constraintID === null || (is_array($constraintID) && count($constraintID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $constraint_id when calling deleteConstraint'
+                'Missing the required parameter $constraintID when calling deleteConstraint'
             );
         }
 
@@ -564,26 +564,26 @@ class ConstraintApi
 
 
         // path params
-        if ($flag_id !== null) {
+        if ($flagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'flagID' . '}',
-                ObjectSerializer::toPathValue($flag_id),
+                ObjectSerializer::toPathValue($flagID),
                 $resourcePath
             );
         }
         // path params
-        if ($segment_id !== null) {
+        if ($segmentID !== null) {
             $resourcePath = str_replace(
                 '{' . 'segmentID' . '}',
-                ObjectSerializer::toPathValue($segment_id),
+                ObjectSerializer::toPathValue($segmentID),
                 $resourcePath
             );
         }
         // path params
-        if ($constraint_id !== null) {
+        if ($constraintID !== null) {
             $resourcePath = str_replace(
                 '{' . 'constraintID' . '}',
-                ObjectSerializer::toPathValue($constraint_id),
+                ObjectSerializer::toPathValue($constraintID),
                 $resourcePath
             );
         }
@@ -655,33 +655,33 @@ class ConstraintApi
     /**
      * Operation findConstraints
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ayaya\FlagrClient\Model\Constraint[]
      */
-    public function findConstraints($flag_id, $segment_id)
+    public function findConstraints($flagID, $segmentID)
     {
-        list($response) = $this->findConstraintsWithHttpInfo($flag_id, $segment_id);
+        list($response) = $this->findConstraintsWithHttpInfo($flagID, $segmentID);
         return $response;
     }
 
     /**
      * Operation findConstraintsWithHttpInfo
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ayaya\FlagrClient\Model\Constraint[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function findConstraintsWithHttpInfo($flag_id, $segment_id)
+    public function findConstraintsWithHttpInfo($flagID, $segmentID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Constraint[]';
-        $request = $this->findConstraintsRequest($flag_id, $segment_id);
+        $request = $this->findConstraintsRequest($flagID, $segmentID);
 
         try {
             $options = $this->createHttpClientOption();
@@ -755,15 +755,15 @@ class ConstraintApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findConstraintsAsync($flag_id, $segment_id)
+    public function findConstraintsAsync($flagID, $segmentID)
     {
-        return $this->findConstraintsAsyncWithHttpInfo($flag_id, $segment_id)
+        return $this->findConstraintsAsyncWithHttpInfo($flagID, $segmentID)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -776,16 +776,16 @@ class ConstraintApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findConstraintsAsyncWithHttpInfo($flag_id, $segment_id)
+    public function findConstraintsAsyncWithHttpInfo($flagID, $segmentID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Constraint[]';
-        $request = $this->findConstraintsRequest($flag_id, $segment_id);
+        $request = $this->findConstraintsRequest($flagID, $segmentID);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -827,24 +827,24 @@ class ConstraintApi
     /**
      * Create request for operation 'findConstraints'
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function findConstraintsRequest($flag_id, $segment_id)
+    protected function findConstraintsRequest($flagID, $segmentID)
     {
-        // verify the required parameter 'flag_id' is set
-        if ($flag_id === null || (is_array($flag_id) && count($flag_id) === 0)) {
+        // verify the required parameter 'flagID' is set
+        if ($flagID === null || (is_array($flagID) && count($flagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flag_id when calling findConstraints'
+                'Missing the required parameter $flagID when calling findConstraints'
             );
         }
-        // verify the required parameter 'segment_id' is set
-        if ($segment_id === null || (is_array($segment_id) && count($segment_id) === 0)) {
+        // verify the required parameter 'segmentID' is set
+        if ($segmentID === null || (is_array($segmentID) && count($segmentID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $segment_id when calling findConstraints'
+                'Missing the required parameter $segmentID when calling findConstraints'
             );
         }
 
@@ -857,18 +857,18 @@ class ConstraintApi
 
 
         // path params
-        if ($flag_id !== null) {
+        if ($flagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'flagID' . '}',
-                ObjectSerializer::toPathValue($flag_id),
+                ObjectSerializer::toPathValue($flagID),
                 $resourcePath
             );
         }
         // path params
-        if ($segment_id !== null) {
+        if ($segmentID !== null) {
             $resourcePath = str_replace(
                 '{' . 'segmentID' . '}',
-                ObjectSerializer::toPathValue($segment_id),
+                ObjectSerializer::toPathValue($segmentID),
                 $resourcePath
             );
         }
@@ -941,17 +941,17 @@ class ConstraintApi
      * Operation putConstraint
      *
      * @param  \Ayaya\FlagrClient\Model\CreateConstraintRequest $body create a constraint (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
-     * @param  int $constraint_id numeric ID of the constraint (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
+     * @param  int $constraintID numeric ID of the constraint (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ayaya\FlagrClient\Model\Constraint
      */
-    public function putConstraint($body, $flag_id, $segment_id, $constraint_id)
+    public function putConstraint($body, $flagID, $segmentID, $constraintID)
     {
-        list($response) = $this->putConstraintWithHttpInfo($body, $flag_id, $segment_id, $constraint_id);
+        list($response) = $this->putConstraintWithHttpInfo($body, $flagID, $segmentID, $constraintID);
         return $response;
     }
 
@@ -959,18 +959,18 @@ class ConstraintApi
      * Operation putConstraintWithHttpInfo
      *
      * @param  \Ayaya\FlagrClient\Model\CreateConstraintRequest $body create a constraint (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
-     * @param  int $constraint_id numeric ID of the constraint (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
+     * @param  int $constraintID numeric ID of the constraint (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ayaya\FlagrClient\Model\Constraint, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putConstraintWithHttpInfo($body, $flag_id, $segment_id, $constraint_id)
+    public function putConstraintWithHttpInfo($body, $flagID, $segmentID, $constraintID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Constraint';
-        $request = $this->putConstraintRequest($body, $flag_id, $segment_id, $constraint_id);
+        $request = $this->putConstraintRequest($body, $flagID, $segmentID, $constraintID);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1045,16 +1045,16 @@ class ConstraintApi
      * 
      *
      * @param  \Ayaya\FlagrClient\Model\CreateConstraintRequest $body create a constraint (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
-     * @param  int $constraint_id numeric ID of the constraint (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
+     * @param  int $constraintID numeric ID of the constraint (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putConstraintAsync($body, $flag_id, $segment_id, $constraint_id)
+    public function putConstraintAsync($body, $flagID, $segmentID, $constraintID)
     {
-        return $this->putConstraintAsyncWithHttpInfo($body, $flag_id, $segment_id, $constraint_id)
+        return $this->putConstraintAsyncWithHttpInfo($body, $flagID, $segmentID, $constraintID)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1068,17 +1068,17 @@ class ConstraintApi
      * 
      *
      * @param  \Ayaya\FlagrClient\Model\CreateConstraintRequest $body create a constraint (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
-     * @param  int $constraint_id numeric ID of the constraint (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
+     * @param  int $constraintID numeric ID of the constraint (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putConstraintAsyncWithHttpInfo($body, $flag_id, $segment_id, $constraint_id)
+    public function putConstraintAsyncWithHttpInfo($body, $flagID, $segmentID, $constraintID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Constraint';
-        $request = $this->putConstraintRequest($body, $flag_id, $segment_id, $constraint_id);
+        $request = $this->putConstraintRequest($body, $flagID, $segmentID, $constraintID);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1121,14 +1121,14 @@ class ConstraintApi
      * Create request for operation 'putConstraint'
      *
      * @param  \Ayaya\FlagrClient\Model\CreateConstraintRequest $body create a constraint (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
-     * @param  int $constraint_id numeric ID of the constraint (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
+     * @param  int $constraintID numeric ID of the constraint (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function putConstraintRequest($body, $flag_id, $segment_id, $constraint_id)
+    protected function putConstraintRequest($body, $flagID, $segmentID, $constraintID)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
@@ -1136,22 +1136,22 @@ class ConstraintApi
                 'Missing the required parameter $body when calling putConstraint'
             );
         }
-        // verify the required parameter 'flag_id' is set
-        if ($flag_id === null || (is_array($flag_id) && count($flag_id) === 0)) {
+        // verify the required parameter 'flagID' is set
+        if ($flagID === null || (is_array($flagID) && count($flagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flag_id when calling putConstraint'
+                'Missing the required parameter $flagID when calling putConstraint'
             );
         }
-        // verify the required parameter 'segment_id' is set
-        if ($segment_id === null || (is_array($segment_id) && count($segment_id) === 0)) {
+        // verify the required parameter 'segmentID' is set
+        if ($segmentID === null || (is_array($segmentID) && count($segmentID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $segment_id when calling putConstraint'
+                'Missing the required parameter $segmentID when calling putConstraint'
             );
         }
-        // verify the required parameter 'constraint_id' is set
-        if ($constraint_id === null || (is_array($constraint_id) && count($constraint_id) === 0)) {
+        // verify the required parameter 'constraintID' is set
+        if ($constraintID === null || (is_array($constraintID) && count($constraintID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $constraint_id when calling putConstraint'
+                'Missing the required parameter $constraintID when calling putConstraint'
             );
         }
 
@@ -1164,26 +1164,26 @@ class ConstraintApi
 
 
         // path params
-        if ($flag_id !== null) {
+        if ($flagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'flagID' . '}',
-                ObjectSerializer::toPathValue($flag_id),
+                ObjectSerializer::toPathValue($flagID),
                 $resourcePath
             );
         }
         // path params
-        if ($segment_id !== null) {
+        if ($segmentID !== null) {
             $resourcePath = str_replace(
                 '{' . 'segmentID' . '}',
-                ObjectSerializer::toPathValue($segment_id),
+                ObjectSerializer::toPathValue($segmentID),
                 $resourcePath
             );
         }
         // path params
-        if ($constraint_id !== null) {
+        if ($constraintID !== null) {
             $resourcePath = str_replace(
                 '{' . 'constraintID' . '}',
-                ObjectSerializer::toPathValue($constraint_id),
+                ObjectSerializer::toPathValue($constraintID),
                 $resourcePath
             );
         }

@@ -90,15 +90,15 @@ class VariantApi
      * Operation createVariant
      *
      * @param  \Ayaya\FlagrClient\Model\CreateVariantRequest $body create a variant (required)
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ayaya\FlagrClient\Model\Variant
      */
-    public function createVariant($body, $flag_id)
+    public function createVariant($body, $flagID)
     {
-        list($response) = $this->createVariantWithHttpInfo($body, $flag_id);
+        list($response) = $this->createVariantWithHttpInfo($body, $flagID);
         return $response;
     }
 
@@ -106,16 +106,16 @@ class VariantApi
      * Operation createVariantWithHttpInfo
      *
      * @param  \Ayaya\FlagrClient\Model\CreateVariantRequest $body create a variant (required)
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ayaya\FlagrClient\Model\Variant, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createVariantWithHttpInfo($body, $flag_id)
+    public function createVariantWithHttpInfo($body, $flagID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Variant';
-        $request = $this->createVariantRequest($body, $flag_id);
+        $request = $this->createVariantRequest($body, $flagID);
 
         try {
             $options = $this->createHttpClientOption();
@@ -190,14 +190,14 @@ class VariantApi
      * 
      *
      * @param  \Ayaya\FlagrClient\Model\CreateVariantRequest $body create a variant (required)
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createVariantAsync($body, $flag_id)
+    public function createVariantAsync($body, $flagID)
     {
-        return $this->createVariantAsyncWithHttpInfo($body, $flag_id)
+        return $this->createVariantAsyncWithHttpInfo($body, $flagID)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -211,15 +211,15 @@ class VariantApi
      * 
      *
      * @param  \Ayaya\FlagrClient\Model\CreateVariantRequest $body create a variant (required)
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createVariantAsyncWithHttpInfo($body, $flag_id)
+    public function createVariantAsyncWithHttpInfo($body, $flagID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Variant';
-        $request = $this->createVariantRequest($body, $flag_id);
+        $request = $this->createVariantRequest($body, $flagID);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -262,12 +262,12 @@ class VariantApi
      * Create request for operation 'createVariant'
      *
      * @param  \Ayaya\FlagrClient\Model\CreateVariantRequest $body create a variant (required)
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createVariantRequest($body, $flag_id)
+    protected function createVariantRequest($body, $flagID)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
@@ -275,10 +275,10 @@ class VariantApi
                 'Missing the required parameter $body when calling createVariant'
             );
         }
-        // verify the required parameter 'flag_id' is set
-        if ($flag_id === null || (is_array($flag_id) && count($flag_id) === 0)) {
+        // verify the required parameter 'flagID' is set
+        if ($flagID === null || (is_array($flagID) && count($flagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flag_id when calling createVariant'
+                'Missing the required parameter $flagID when calling createVariant'
             );
         }
 
@@ -291,10 +291,10 @@ class VariantApi
 
 
         // path params
-        if ($flag_id !== null) {
+        if ($flagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'flagID' . '}',
-                ObjectSerializer::toPathValue($flag_id),
+                ObjectSerializer::toPathValue($flagID),
                 $resourcePath
             );
         }
@@ -369,32 +369,32 @@ class VariantApi
     /**
      * Operation deleteVariant
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $variant_id numeric ID of the variant (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $variantID numeric ID of the variant (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteVariant($flag_id, $variant_id)
+    public function deleteVariant($flagID, $variantID)
     {
-        $this->deleteVariantWithHttpInfo($flag_id, $variant_id);
+        $this->deleteVariantWithHttpInfo($flagID, $variantID);
     }
 
     /**
      * Operation deleteVariantWithHttpInfo
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $variant_id numeric ID of the variant (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $variantID numeric ID of the variant (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteVariantWithHttpInfo($flag_id, $variant_id)
+    public function deleteVariantWithHttpInfo($flagID, $variantID)
     {
         $returnType = '';
-        $request = $this->deleteVariantRequest($flag_id, $variant_id);
+        $request = $this->deleteVariantRequest($flagID, $variantID);
 
         try {
             $options = $this->createHttpClientOption();
@@ -446,15 +446,15 @@ class VariantApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $variant_id numeric ID of the variant (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $variantID numeric ID of the variant (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteVariantAsync($flag_id, $variant_id)
+    public function deleteVariantAsync($flagID, $variantID)
     {
-        return $this->deleteVariantAsyncWithHttpInfo($flag_id, $variant_id)
+        return $this->deleteVariantAsyncWithHttpInfo($flagID, $variantID)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -467,16 +467,16 @@ class VariantApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $variant_id numeric ID of the variant (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $variantID numeric ID of the variant (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteVariantAsyncWithHttpInfo($flag_id, $variant_id)
+    public function deleteVariantAsyncWithHttpInfo($flagID, $variantID)
     {
         $returnType = '';
-        $request = $this->deleteVariantRequest($flag_id, $variant_id);
+        $request = $this->deleteVariantRequest($flagID, $variantID);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -504,24 +504,24 @@ class VariantApi
     /**
      * Create request for operation 'deleteVariant'
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $variant_id numeric ID of the variant (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $variantID numeric ID of the variant (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteVariantRequest($flag_id, $variant_id)
+    protected function deleteVariantRequest($flagID, $variantID)
     {
-        // verify the required parameter 'flag_id' is set
-        if ($flag_id === null || (is_array($flag_id) && count($flag_id) === 0)) {
+        // verify the required parameter 'flagID' is set
+        if ($flagID === null || (is_array($flagID) && count($flagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flag_id when calling deleteVariant'
+                'Missing the required parameter $flagID when calling deleteVariant'
             );
         }
-        // verify the required parameter 'variant_id' is set
-        if ($variant_id === null || (is_array($variant_id) && count($variant_id) === 0)) {
+        // verify the required parameter 'variantID' is set
+        if ($variantID === null || (is_array($variantID) && count($variantID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $variant_id when calling deleteVariant'
+                'Missing the required parameter $variantID when calling deleteVariant'
             );
         }
 
@@ -534,18 +534,18 @@ class VariantApi
 
 
         // path params
-        if ($flag_id !== null) {
+        if ($flagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'flagID' . '}',
-                ObjectSerializer::toPathValue($flag_id),
+                ObjectSerializer::toPathValue($flagID),
                 $resourcePath
             );
         }
         // path params
-        if ($variant_id !== null) {
+        if ($variantID !== null) {
             $resourcePath = str_replace(
                 '{' . 'variantID' . '}',
-                ObjectSerializer::toPathValue($variant_id),
+                ObjectSerializer::toPathValue($variantID),
                 $resourcePath
             );
         }
@@ -617,31 +617,31 @@ class VariantApi
     /**
      * Operation findVariants
      *
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ayaya\FlagrClient\Model\Variant[]
      */
-    public function findVariants($flag_id)
+    public function findVariants($flagID)
     {
-        list($response) = $this->findVariantsWithHttpInfo($flag_id);
+        list($response) = $this->findVariantsWithHttpInfo($flagID);
         return $response;
     }
 
     /**
      * Operation findVariantsWithHttpInfo
      *
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ayaya\FlagrClient\Model\Variant[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function findVariantsWithHttpInfo($flag_id)
+    public function findVariantsWithHttpInfo($flagID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Variant[]';
-        $request = $this->findVariantsRequest($flag_id);
+        $request = $this->findVariantsRequest($flagID);
 
         try {
             $options = $this->createHttpClientOption();
@@ -715,14 +715,14 @@ class VariantApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findVariantsAsync($flag_id)
+    public function findVariantsAsync($flagID)
     {
-        return $this->findVariantsAsyncWithHttpInfo($flag_id)
+        return $this->findVariantsAsyncWithHttpInfo($flagID)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -735,15 +735,15 @@ class VariantApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findVariantsAsyncWithHttpInfo($flag_id)
+    public function findVariantsAsyncWithHttpInfo($flagID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Variant[]';
-        $request = $this->findVariantsRequest($flag_id);
+        $request = $this->findVariantsRequest($flagID);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -785,17 +785,17 @@ class VariantApi
     /**
      * Create request for operation 'findVariants'
      *
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function findVariantsRequest($flag_id)
+    protected function findVariantsRequest($flagID)
     {
-        // verify the required parameter 'flag_id' is set
-        if ($flag_id === null || (is_array($flag_id) && count($flag_id) === 0)) {
+        // verify the required parameter 'flagID' is set
+        if ($flagID === null || (is_array($flagID) && count($flagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flag_id when calling findVariants'
+                'Missing the required parameter $flagID when calling findVariants'
             );
         }
 
@@ -808,10 +808,10 @@ class VariantApi
 
 
         // path params
-        if ($flag_id !== null) {
+        if ($flagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'flagID' . '}',
-                ObjectSerializer::toPathValue($flag_id),
+                ObjectSerializer::toPathValue($flagID),
                 $resourcePath
             );
         }
@@ -884,16 +884,16 @@ class VariantApi
      * Operation putVariant
      *
      * @param  \Ayaya\FlagrClient\Model\PutVariantRequest $body update a variant (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $variant_id numeric ID of the variant (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $variantID numeric ID of the variant (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ayaya\FlagrClient\Model\Variant
      */
-    public function putVariant($body, $flag_id, $variant_id)
+    public function putVariant($body, $flagID, $variantID)
     {
-        list($response) = $this->putVariantWithHttpInfo($body, $flag_id, $variant_id);
+        list($response) = $this->putVariantWithHttpInfo($body, $flagID, $variantID);
         return $response;
     }
 
@@ -901,17 +901,17 @@ class VariantApi
      * Operation putVariantWithHttpInfo
      *
      * @param  \Ayaya\FlagrClient\Model\PutVariantRequest $body update a variant (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $variant_id numeric ID of the variant (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $variantID numeric ID of the variant (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ayaya\FlagrClient\Model\Variant, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putVariantWithHttpInfo($body, $flag_id, $variant_id)
+    public function putVariantWithHttpInfo($body, $flagID, $variantID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Variant';
-        $request = $this->putVariantRequest($body, $flag_id, $variant_id);
+        $request = $this->putVariantRequest($body, $flagID, $variantID);
 
         try {
             $options = $this->createHttpClientOption();
@@ -986,15 +986,15 @@ class VariantApi
      * 
      *
      * @param  \Ayaya\FlagrClient\Model\PutVariantRequest $body update a variant (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $variant_id numeric ID of the variant (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $variantID numeric ID of the variant (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putVariantAsync($body, $flag_id, $variant_id)
+    public function putVariantAsync($body, $flagID, $variantID)
     {
-        return $this->putVariantAsyncWithHttpInfo($body, $flag_id, $variant_id)
+        return $this->putVariantAsyncWithHttpInfo($body, $flagID, $variantID)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1008,16 +1008,16 @@ class VariantApi
      * 
      *
      * @param  \Ayaya\FlagrClient\Model\PutVariantRequest $body update a variant (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $variant_id numeric ID of the variant (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $variantID numeric ID of the variant (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putVariantAsyncWithHttpInfo($body, $flag_id, $variant_id)
+    public function putVariantAsyncWithHttpInfo($body, $flagID, $variantID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Variant';
-        $request = $this->putVariantRequest($body, $flag_id, $variant_id);
+        $request = $this->putVariantRequest($body, $flagID, $variantID);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1060,13 +1060,13 @@ class VariantApi
      * Create request for operation 'putVariant'
      *
      * @param  \Ayaya\FlagrClient\Model\PutVariantRequest $body update a variant (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $variant_id numeric ID of the variant (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $variantID numeric ID of the variant (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function putVariantRequest($body, $flag_id, $variant_id)
+    protected function putVariantRequest($body, $flagID, $variantID)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
@@ -1074,16 +1074,16 @@ class VariantApi
                 'Missing the required parameter $body when calling putVariant'
             );
         }
-        // verify the required parameter 'flag_id' is set
-        if ($flag_id === null || (is_array($flag_id) && count($flag_id) === 0)) {
+        // verify the required parameter 'flagID' is set
+        if ($flagID === null || (is_array($flagID) && count($flagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flag_id when calling putVariant'
+                'Missing the required parameter $flagID when calling putVariant'
             );
         }
-        // verify the required parameter 'variant_id' is set
-        if ($variant_id === null || (is_array($variant_id) && count($variant_id) === 0)) {
+        // verify the required parameter 'variantID' is set
+        if ($variantID === null || (is_array($variantID) && count($variantID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $variant_id when calling putVariant'
+                'Missing the required parameter $variantID when calling putVariant'
             );
         }
 
@@ -1096,18 +1096,18 @@ class VariantApi
 
 
         // path params
-        if ($flag_id !== null) {
+        if ($flagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'flagID' . '}',
-                ObjectSerializer::toPathValue($flag_id),
+                ObjectSerializer::toPathValue($flagID),
                 $resourcePath
             );
         }
         // path params
-        if ($variant_id !== null) {
+        if ($variantID !== null) {
             $resourcePath = str_replace(
                 '{' . 'variantID' . '}',
-                ObjectSerializer::toPathValue($variant_id),
+                ObjectSerializer::toPathValue($variantID),
                 $resourcePath
             );
         }

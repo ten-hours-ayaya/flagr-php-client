@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**putVariant**](VariantApi.md#putvariant) | **PUT** /flags/{flagID}/variants/{variantID} | 
 
 # **createVariant**
-> \Ayaya\FlagrClient\Model\Variant createVariant($body, $flag_id)
+> \Ayaya\FlagrClient\Model\Variant createVariant($body, $flagID)
 
 
 
@@ -25,10 +25,10 @@ $apiInstance = new Ayaya\FlagrClient\Api\VariantApi(
     new GuzzleHttp\Client()
 );
 $body = new \Ayaya\FlagrClient\Model\CreateVariantRequest(); // \Ayaya\FlagrClient\Model\CreateVariantRequest | create a variant
-$flag_id = 789; // int | numeric ID of the flag
+$flagID = 789; // int | numeric ID of the flag
 
 try {
-    $result = $apiInstance->createVariant($body, $flag_id);
+    $result = $apiInstance->createVariant($body, $flagID);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VariantApi->createVariant: ', $e->getMessage(), PHP_EOL;
@@ -41,7 +41,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\Ayaya\FlagrClient\Model\CreateVariantRequest**](../Model/CreateVariantRequest.md)| create a variant |
- **flag_id** | **int**| numeric ID of the flag |
+ **flagID** | **int**| numeric ID of the flag |
 
 ### Return type
 
@@ -59,7 +59,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteVariant**
-> deleteVariant($flag_id, $variant_id)
+> deleteVariant($flagID, $variantID)
 
 
 
@@ -73,11 +73,11 @@ $apiInstance = new Ayaya\FlagrClient\Api\VariantApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$flag_id = 789; // int | numeric ID of the flag
-$variant_id = 789; // int | numeric ID of the variant
+$flagID = 789; // int | numeric ID of the flag
+$variantID = 789; // int | numeric ID of the variant
 
 try {
-    $apiInstance->deleteVariant($flag_id, $variant_id);
+    $apiInstance->deleteVariant($flagID, $variantID);
 } catch (Exception $e) {
     echo 'Exception when calling VariantApi->deleteVariant: ', $e->getMessage(), PHP_EOL;
 }
@@ -88,8 +88,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **flag_id** | **int**| numeric ID of the flag |
- **variant_id** | **int**| numeric ID of the variant |
+ **flagID** | **int**| numeric ID of the flag |
+ **variantID** | **int**| numeric ID of the variant |
 
 ### Return type
 
@@ -107,7 +107,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **findVariants**
-> \Ayaya\FlagrClient\Model\Variant[] findVariants($flag_id)
+> \Ayaya\FlagrClient\Model\Variant[] findVariants($flagID)
 
 
 
@@ -121,10 +121,10 @@ $apiInstance = new Ayaya\FlagrClient\Api\VariantApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$flag_id = 789; // int | numeric ID of the flag
+$flagID = 789; // int | numeric ID of the flag
 
 try {
-    $result = $apiInstance->findVariants($flag_id);
+    $result = $apiInstance->findVariants($flagID);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VariantApi->findVariants: ', $e->getMessage(), PHP_EOL;
@@ -136,7 +136,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **flag_id** | **int**| numeric ID of the flag |
+ **flagID** | **int**| numeric ID of the flag |
 
 ### Return type
 
@@ -154,7 +154,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putVariant**
-> \Ayaya\FlagrClient\Model\Variant putVariant($body, $flag_id, $variant_id)
+> \Ayaya\FlagrClient\Model\Variant putVariant($body, $flagID, $variantID)
 
 
 
@@ -169,11 +169,11 @@ $apiInstance = new Ayaya\FlagrClient\Api\VariantApi(
     new GuzzleHttp\Client()
 );
 $body = new \Ayaya\FlagrClient\Model\PutVariantRequest(); // \Ayaya\FlagrClient\Model\PutVariantRequest | update a variant
-$flag_id = 789; // int | numeric ID of the flag
-$variant_id = 789; // int | numeric ID of the variant
+$flagID = 789; // int | numeric ID of the flag
+$variantID = 789; // int | numeric ID of the variant
 
 try {
-    $result = $apiInstance->putVariant($body, $flag_id, $variant_id);
+    $result = $apiInstance->putVariant($body, $flagID, $variantID);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VariantApi->putVariant: ', $e->getMessage(), PHP_EOL;
@@ -186,8 +186,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\Ayaya\FlagrClient\Model\PutVariantRequest**](../Model/PutVariantRequest.md)| update a variant |
- **flag_id** | **int**| numeric ID of the flag |
- **variant_id** | **int**| numeric ID of the variant |
+ **flagID** | **int**| numeric ID of the flag |
+ **variantID** | **int**| numeric ID of the variant |
 
 ### Return type
 

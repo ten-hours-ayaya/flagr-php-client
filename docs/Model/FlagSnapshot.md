@@ -4,9 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
-**updated_by** | **string** |  | [optional] 
+**updatedBy** | **string** |  | [optional] 
 **flag** | [**\Ayaya\FlagrClient\Model\Flag**](Flag.md) |  | 
-**updated_at** | **string** |  | 
+**updatedAt** | **string** |  | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

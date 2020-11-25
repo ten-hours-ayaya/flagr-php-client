@@ -56,7 +56,7 @@ class EvalDebugLog implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'segment_debug_logs' => '\Ayaya\FlagrClient\Model\SegmentDebugLog[]',
+        'segmentDebugLogs' => '\Ayaya\FlagrClient\Model\SegmentDebugLog[]',
 'msg' => 'string'    ];
 
     /**
@@ -65,7 +65,7 @@ class EvalDebugLog implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'segment_debug_logs' => null,
+        'segmentDebugLogs' => null,
 'msg' => null    ];
 
     /**
@@ -95,7 +95,7 @@ class EvalDebugLog implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'segment_debug_logs' => 'segmentDebugLogs',
+        'segmentDebugLogs' => 'segmentDebugLogs',
 'msg' => 'msg'    ];
 
     /**
@@ -104,7 +104,7 @@ class EvalDebugLog implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'segment_debug_logs' => 'setSegmentDebugLogs',
+        'segmentDebugLogs' => 'setSegmentDebugLogs',
 'msg' => 'setMsg'    ];
 
     /**
@@ -113,7 +113,7 @@ class EvalDebugLog implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'segment_debug_logs' => 'getSegmentDebugLogs',
+        'segmentDebugLogs' => 'getSegmentDebugLogs',
 'msg' => 'getMsg'    ];
 
     /**
@@ -174,7 +174,7 @@ class EvalDebugLog implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['segment_debug_logs'] = isset($data['segment_debug_logs']) ? $data['segment_debug_logs'] : null;
+        $this->container['segmentDebugLogs'] = isset($data['segmentDebugLogs']) ? $data['segmentDebugLogs'] : null;
         $this->container['msg'] = isset($data['msg']) ? $data['msg'] : null;
     }
 
@@ -203,25 +203,25 @@ class EvalDebugLog implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets segment_debug_logs
+     * Gets segmentDebugLogs
      *
      * @return \Ayaya\FlagrClient\Model\SegmentDebugLog[]
      */
     public function getSegmentDebugLogs()
     {
-        return $this->container['segment_debug_logs'];
+        return $this->container['segmentDebugLogs'];
     }
 
     /**
-     * Sets segment_debug_logs
+     * Sets segmentDebugLogs
      *
-     * @param \Ayaya\FlagrClient\Model\SegmentDebugLog[] $segment_debug_logs segment_debug_logs
+     * @param \Ayaya\FlagrClient\Model\SegmentDebugLog[] $segmentDebugLogs segmentDebugLogs
      *
      * @return $this
      */
-    public function setSegmentDebugLogs($segment_debug_logs)
+    public function setSegmentDebugLogs($segmentDebugLogs)
     {
-        $this->container['segment_debug_logs'] = $segment_debug_logs;
+        $this->container['segmentDebugLogs'] = $segmentDebugLogs;
 
         return $this;
     }

@@ -56,16 +56,16 @@ class EvalResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'flag_id' => 'int',
-'flag_key' => 'string',
-'flag_snapshot_id' => 'int',
-'segment_id' => 'int',
-'variant_id' => 'int',
-'variant_key' => 'string',
-'variant_attachment' => 'object',
-'eval_context' => '\Ayaya\FlagrClient\Model\EvalContext',
+        'flagID' => 'int',
+'flagKey' => 'string',
+'flagSnapshotID' => 'int',
+'segmentID' => 'int',
+'variantID' => 'int',
+'variantKey' => 'string',
+'variantAttachment' => 'object',
+'evalContext' => '\Ayaya\FlagrClient\Model\EvalContext',
 'timestamp' => 'string',
-'eval_debug_log' => '\Ayaya\FlagrClient\Model\EvalDebugLog'    ];
+'evalDebugLog' => '\Ayaya\FlagrClient\Model\EvalDebugLog'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -73,16 +73,16 @@ class EvalResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'flag_id' => 'int64',
-'flag_key' => null,
-'flag_snapshot_id' => 'int64',
-'segment_id' => 'int64',
-'variant_id' => 'int64',
-'variant_key' => null,
-'variant_attachment' => null,
-'eval_context' => null,
+        'flagID' => 'int64',
+'flagKey' => null,
+'flagSnapshotID' => 'int64',
+'segmentID' => 'int64',
+'variantID' => 'int64',
+'variantKey' => null,
+'variantAttachment' => null,
+'evalContext' => null,
 'timestamp' => null,
-'eval_debug_log' => null    ];
+'evalDebugLog' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -111,16 +111,16 @@ class EvalResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'flag_id' => 'flagID',
-'flag_key' => 'flagKey',
-'flag_snapshot_id' => 'flagSnapshotID',
-'segment_id' => 'segmentID',
-'variant_id' => 'variantID',
-'variant_key' => 'variantKey',
-'variant_attachment' => 'variantAttachment',
-'eval_context' => 'evalContext',
+        'flagID' => 'flagID',
+'flagKey' => 'flagKey',
+'flagSnapshotID' => 'flagSnapshotID',
+'segmentID' => 'segmentID',
+'variantID' => 'variantID',
+'variantKey' => 'variantKey',
+'variantAttachment' => 'variantAttachment',
+'evalContext' => 'evalContext',
 'timestamp' => 'timestamp',
-'eval_debug_log' => 'evalDebugLog'    ];
+'evalDebugLog' => 'evalDebugLog'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -128,16 +128,16 @@ class EvalResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'flag_id' => 'setFlagId',
-'flag_key' => 'setFlagKey',
-'flag_snapshot_id' => 'setFlagSnapshotId',
-'segment_id' => 'setSegmentId',
-'variant_id' => 'setVariantId',
-'variant_key' => 'setVariantKey',
-'variant_attachment' => 'setVariantAttachment',
-'eval_context' => 'setEvalContext',
+        'flagID' => 'setFlagID',
+'flagKey' => 'setFlagKey',
+'flagSnapshotID' => 'setFlagSnapshotID',
+'segmentID' => 'setSegmentID',
+'variantID' => 'setVariantID',
+'variantKey' => 'setVariantKey',
+'variantAttachment' => 'setVariantAttachment',
+'evalContext' => 'setEvalContext',
 'timestamp' => 'setTimestamp',
-'eval_debug_log' => 'setEvalDebugLog'    ];
+'evalDebugLog' => 'setEvalDebugLog'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -145,16 +145,16 @@ class EvalResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'flag_id' => 'getFlagId',
-'flag_key' => 'getFlagKey',
-'flag_snapshot_id' => 'getFlagSnapshotId',
-'segment_id' => 'getSegmentId',
-'variant_id' => 'getVariantId',
-'variant_key' => 'getVariantKey',
-'variant_attachment' => 'getVariantAttachment',
-'eval_context' => 'getEvalContext',
+        'flagID' => 'getFlagID',
+'flagKey' => 'getFlagKey',
+'flagSnapshotID' => 'getFlagSnapshotID',
+'segmentID' => 'getSegmentID',
+'variantID' => 'getVariantID',
+'variantKey' => 'getVariantKey',
+'variantAttachment' => 'getVariantAttachment',
+'evalContext' => 'getEvalContext',
 'timestamp' => 'getTimestamp',
-'eval_debug_log' => 'getEvalDebugLog'    ];
+'evalDebugLog' => 'getEvalDebugLog'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -214,16 +214,16 @@ class EvalResult implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['flag_id'] = isset($data['flag_id']) ? $data['flag_id'] : null;
-        $this->container['flag_key'] = isset($data['flag_key']) ? $data['flag_key'] : null;
-        $this->container['flag_snapshot_id'] = isset($data['flag_snapshot_id']) ? $data['flag_snapshot_id'] : null;
-        $this->container['segment_id'] = isset($data['segment_id']) ? $data['segment_id'] : null;
-        $this->container['variant_id'] = isset($data['variant_id']) ? $data['variant_id'] : null;
-        $this->container['variant_key'] = isset($data['variant_key']) ? $data['variant_key'] : null;
-        $this->container['variant_attachment'] = isset($data['variant_attachment']) ? $data['variant_attachment'] : null;
-        $this->container['eval_context'] = isset($data['eval_context']) ? $data['eval_context'] : null;
+        $this->container['flagID'] = isset($data['flagID']) ? $data['flagID'] : null;
+        $this->container['flagKey'] = isset($data['flagKey']) ? $data['flagKey'] : null;
+        $this->container['flagSnapshotID'] = isset($data['flagSnapshotID']) ? $data['flagSnapshotID'] : null;
+        $this->container['segmentID'] = isset($data['segmentID']) ? $data['segmentID'] : null;
+        $this->container['variantID'] = isset($data['variantID']) ? $data['variantID'] : null;
+        $this->container['variantKey'] = isset($data['variantKey']) ? $data['variantKey'] : null;
+        $this->container['variantAttachment'] = isset($data['variantAttachment']) ? $data['variantAttachment'] : null;
+        $this->container['evalContext'] = isset($data['evalContext']) ? $data['evalContext'] : null;
         $this->container['timestamp'] = isset($data['timestamp']) ? $data['timestamp'] : null;
-        $this->container['eval_debug_log'] = isset($data['eval_debug_log']) ? $data['eval_debug_log'] : null;
+        $this->container['evalDebugLog'] = isset($data['evalDebugLog']) ? $data['evalDebugLog'] : null;
     }
 
     /**
@@ -251,193 +251,193 @@ class EvalResult implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets flag_id
+     * Gets flagID
      *
      * @return int
      */
-    public function getFlagId()
+    public function getFlagID()
     {
-        return $this->container['flag_id'];
+        return $this->container['flagID'];
     }
 
     /**
-     * Sets flag_id
+     * Sets flagID
      *
-     * @param int $flag_id flag_id
+     * @param int $flagID flagID
      *
      * @return $this
      */
-    public function setFlagId($flag_id)
+    public function setFlagID($flagID)
     {
-        $this->container['flag_id'] = $flag_id;
+        $this->container['flagID'] = $flagID;
 
         return $this;
     }
 
     /**
-     * Gets flag_key
+     * Gets flagKey
      *
      * @return string
      */
     public function getFlagKey()
     {
-        return $this->container['flag_key'];
+        return $this->container['flagKey'];
     }
 
     /**
-     * Sets flag_key
+     * Sets flagKey
      *
-     * @param string $flag_key flag_key
+     * @param string $flagKey flagKey
      *
      * @return $this
      */
-    public function setFlagKey($flag_key)
+    public function setFlagKey($flagKey)
     {
-        $this->container['flag_key'] = $flag_key;
+        $this->container['flagKey'] = $flagKey;
 
         return $this;
     }
 
     /**
-     * Gets flag_snapshot_id
+     * Gets flagSnapshotID
      *
      * @return int
      */
-    public function getFlagSnapshotId()
+    public function getFlagSnapshotID()
     {
-        return $this->container['flag_snapshot_id'];
+        return $this->container['flagSnapshotID'];
     }
 
     /**
-     * Sets flag_snapshot_id
+     * Sets flagSnapshotID
      *
-     * @param int $flag_snapshot_id flag_snapshot_id
+     * @param int $flagSnapshotID flagSnapshotID
      *
      * @return $this
      */
-    public function setFlagSnapshotId($flag_snapshot_id)
+    public function setFlagSnapshotID($flagSnapshotID)
     {
-        $this->container['flag_snapshot_id'] = $flag_snapshot_id;
+        $this->container['flagSnapshotID'] = $flagSnapshotID;
 
         return $this;
     }
 
     /**
-     * Gets segment_id
+     * Gets segmentID
      *
      * @return int
      */
-    public function getSegmentId()
+    public function getSegmentID()
     {
-        return $this->container['segment_id'];
+        return $this->container['segmentID'];
     }
 
     /**
-     * Sets segment_id
+     * Sets segmentID
      *
-     * @param int $segment_id segment_id
+     * @param int $segmentID segmentID
      *
      * @return $this
      */
-    public function setSegmentId($segment_id)
+    public function setSegmentID($segmentID)
     {
-        $this->container['segment_id'] = $segment_id;
+        $this->container['segmentID'] = $segmentID;
 
         return $this;
     }
 
     /**
-     * Gets variant_id
+     * Gets variantID
      *
      * @return int
      */
-    public function getVariantId()
+    public function getVariantID()
     {
-        return $this->container['variant_id'];
+        return $this->container['variantID'];
     }
 
     /**
-     * Sets variant_id
+     * Sets variantID
      *
-     * @param int $variant_id variant_id
+     * @param int $variantID variantID
      *
      * @return $this
      */
-    public function setVariantId($variant_id)
+    public function setVariantID($variantID)
     {
-        $this->container['variant_id'] = $variant_id;
+        $this->container['variantID'] = $variantID;
 
         return $this;
     }
 
     /**
-     * Gets variant_key
+     * Gets variantKey
      *
      * @return string
      */
     public function getVariantKey()
     {
-        return $this->container['variant_key'];
+        return $this->container['variantKey'];
     }
 
     /**
-     * Sets variant_key
+     * Sets variantKey
      *
-     * @param string $variant_key variant_key
+     * @param string $variantKey variantKey
      *
      * @return $this
      */
-    public function setVariantKey($variant_key)
+    public function setVariantKey($variantKey)
     {
-        $this->container['variant_key'] = $variant_key;
+        $this->container['variantKey'] = $variantKey;
 
         return $this;
     }
 
     /**
-     * Gets variant_attachment
+     * Gets variantAttachment
      *
      * @return object
      */
     public function getVariantAttachment()
     {
-        return $this->container['variant_attachment'];
+        return $this->container['variantAttachment'];
     }
 
     /**
-     * Sets variant_attachment
+     * Sets variantAttachment
      *
-     * @param object $variant_attachment variant_attachment
+     * @param object $variantAttachment variantAttachment
      *
      * @return $this
      */
-    public function setVariantAttachment($variant_attachment)
+    public function setVariantAttachment($variantAttachment)
     {
-        $this->container['variant_attachment'] = $variant_attachment;
+        $this->container['variantAttachment'] = $variantAttachment;
 
         return $this;
     }
 
     /**
-     * Gets eval_context
+     * Gets evalContext
      *
      * @return \Ayaya\FlagrClient\Model\EvalContext
      */
     public function getEvalContext()
     {
-        return $this->container['eval_context'];
+        return $this->container['evalContext'];
     }
 
     /**
-     * Sets eval_context
+     * Sets evalContext
      *
-     * @param \Ayaya\FlagrClient\Model\EvalContext $eval_context eval_context
+     * @param \Ayaya\FlagrClient\Model\EvalContext $evalContext evalContext
      *
      * @return $this
      */
-    public function setEvalContext($eval_context)
+    public function setEvalContext($evalContext)
     {
-        $this->container['eval_context'] = $eval_context;
+        $this->container['evalContext'] = $evalContext;
 
         return $this;
     }
@@ -467,25 +467,25 @@ class EvalResult implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets eval_debug_log
+     * Gets evalDebugLog
      *
      * @return \Ayaya\FlagrClient\Model\EvalDebugLog
      */
     public function getEvalDebugLog()
     {
-        return $this->container['eval_debug_log'];
+        return $this->container['evalDebugLog'];
     }
 
     /**
-     * Sets eval_debug_log
+     * Sets evalDebugLog
      *
-     * @param \Ayaya\FlagrClient\Model\EvalDebugLog $eval_debug_log eval_debug_log
+     * @param \Ayaya\FlagrClient\Model\EvalDebugLog $evalDebugLog evalDebugLog
      *
      * @return $this
      */
-    public function setEvalDebugLog($eval_debug_log)
+    public function setEvalDebugLog($evalDebugLog)
     {
-        $this->container['eval_debug_log'] = $eval_debug_log;
+        $this->container['evalDebugLog'] = $evalDebugLog;
 
         return $this;
     }

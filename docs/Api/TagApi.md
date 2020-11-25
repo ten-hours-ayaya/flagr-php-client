@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**findTags**](TagApi.md#findtags) | **GET** /flags/{flagID}/tags | 
 
 # **createTag**
-> \Ayaya\FlagrClient\Model\Tag createTag($body, $flag_id)
+> \Ayaya\FlagrClient\Model\Tag createTag($body, $flagID)
 
 
 
@@ -25,10 +25,10 @@ $apiInstance = new Ayaya\FlagrClient\Api\TagApi(
     new GuzzleHttp\Client()
 );
 $body = new \Ayaya\FlagrClient\Model\CreateTagRequest(); // \Ayaya\FlagrClient\Model\CreateTagRequest | create a tag
-$flag_id = 789; // int | numeric ID of the flag
+$flagID = 789; // int | numeric ID of the flag
 
 try {
-    $result = $apiInstance->createTag($body, $flag_id);
+    $result = $apiInstance->createTag($body, $flagID);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TagApi->createTag: ', $e->getMessage(), PHP_EOL;
@@ -41,7 +41,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\Ayaya\FlagrClient\Model\CreateTagRequest**](../Model/CreateTagRequest.md)| create a tag |
- **flag_id** | **int**| numeric ID of the flag |
+ **flagID** | **int**| numeric ID of the flag |
 
 ### Return type
 
@@ -59,7 +59,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteTag**
-> deleteTag($flag_id, $tag_id)
+> deleteTag($flagID, $tagID)
 
 
 
@@ -73,11 +73,11 @@ $apiInstance = new Ayaya\FlagrClient\Api\TagApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$flag_id = 789; // int | numeric ID of the flag
-$tag_id = 789; // int | numeric ID of the tag
+$flagID = 789; // int | numeric ID of the flag
+$tagID = 789; // int | numeric ID of the tag
 
 try {
-    $apiInstance->deleteTag($flag_id, $tag_id);
+    $apiInstance->deleteTag($flagID, $tagID);
 } catch (Exception $e) {
     echo 'Exception when calling TagApi->deleteTag: ', $e->getMessage(), PHP_EOL;
 }
@@ -88,8 +88,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **flag_id** | **int**| numeric ID of the flag |
- **tag_id** | **int**| numeric ID of the tag |
+ **flagID** | **int**| numeric ID of the flag |
+ **tagID** | **int**| numeric ID of the tag |
 
 ### Return type
 
@@ -107,7 +107,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **findAllTags**
-> \Ayaya\FlagrClient\Model\Tag[] findAllTags($limit, $offset, $value_like)
+> \Ayaya\FlagrClient\Model\Tag[] findAllTags($limit, $offset, $valueLike)
 
 
 
@@ -123,10 +123,10 @@ $apiInstance = new Ayaya\FlagrClient\Api\TagApi(
 );
 $limit = 789; // int | the numbers of tags to return
 $offset = 789; // int | return tags given the offset, it should usually set together with limit
-$value_like = "value_like_example"; // string | return tags partially matching given value
+$valueLike = "valueLike_example"; // string | return tags partially matching given value
 
 try {
-    $result = $apiInstance->findAllTags($limit, $offset, $value_like);
+    $result = $apiInstance->findAllTags($limit, $offset, $valueLike);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TagApi->findAllTags: ', $e->getMessage(), PHP_EOL;
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| the numbers of tags to return | [optional]
  **offset** | **int**| return tags given the offset, it should usually set together with limit | [optional]
- **value_like** | **string**| return tags partially matching given value | [optional]
+ **valueLike** | **string**| return tags partially matching given value | [optional]
 
 ### Return type
 
@@ -158,7 +158,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **findTags**
-> \Ayaya\FlagrClient\Model\Tag[] findTags($flag_id)
+> \Ayaya\FlagrClient\Model\Tag[] findTags($flagID)
 
 
 
@@ -172,10 +172,10 @@ $apiInstance = new Ayaya\FlagrClient\Api\TagApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$flag_id = 789; // int | numeric ID of the flag
+$flagID = 789; // int | numeric ID of the flag
 
 try {
-    $result = $apiInstance->findTags($flag_id);
+    $result = $apiInstance->findTags($flagID);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TagApi->findTags: ', $e->getMessage(), PHP_EOL;
@@ -187,7 +187,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **flag_id** | **int**| numeric ID of the flag |
+ **flagID** | **int**| numeric ID of the flag |
 
 ### Return type
 

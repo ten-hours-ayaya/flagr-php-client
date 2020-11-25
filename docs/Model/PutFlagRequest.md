@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **string** |  | [optional] 
-**data_records_enabled** | **bool** | enabled data records will get data logging in the metrics pipeline, for example, kafka. | [optional] 
-**entity_type** | **string** | it will overwrite entityType into evaluation logs if it&#x27;s not empty | [optional] 
+**dataRecordsEnabled** | **bool** | enabled data records will get data logging in the metrics pipeline, for example, kafka. | [optional] 
+**entityType** | **string** | it will overwrite entityType into evaluation logs if it&#x27;s not empty | [optional] 
 **enabled** | **bool** |  | [optional] 
 **key** | **string** |  | [optional] 
 **notes** | **string** |  | [optional] 

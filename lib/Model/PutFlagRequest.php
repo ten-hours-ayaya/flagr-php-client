@@ -57,8 +57,8 @@ class PutFlagRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'description' => 'string',
-'data_records_enabled' => 'bool',
-'entity_type' => 'string',
+'dataRecordsEnabled' => 'bool',
+'entityType' => 'string',
 'enabled' => 'bool',
 'key' => 'string',
 'notes' => 'string'    ];
@@ -70,8 +70,8 @@ class PutFlagRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'description' => null,
-'data_records_enabled' => null,
-'entity_type' => null,
+'dataRecordsEnabled' => null,
+'entityType' => null,
 'enabled' => null,
 'key' => null,
 'notes' => null    ];
@@ -104,8 +104,8 @@ class PutFlagRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'description' => 'description',
-'data_records_enabled' => 'dataRecordsEnabled',
-'entity_type' => 'entityType',
+'dataRecordsEnabled' => 'dataRecordsEnabled',
+'entityType' => 'entityType',
 'enabled' => 'enabled',
 'key' => 'key',
 'notes' => 'notes'    ];
@@ -117,8 +117,8 @@ class PutFlagRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'description' => 'setDescription',
-'data_records_enabled' => 'setDataRecordsEnabled',
-'entity_type' => 'setEntityType',
+'dataRecordsEnabled' => 'setDataRecordsEnabled',
+'entityType' => 'setEntityType',
 'enabled' => 'setEnabled',
 'key' => 'setKey',
 'notes' => 'setNotes'    ];
@@ -130,8 +130,8 @@ class PutFlagRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'description' => 'getDescription',
-'data_records_enabled' => 'getDataRecordsEnabled',
-'entity_type' => 'getEntityType',
+'dataRecordsEnabled' => 'getDataRecordsEnabled',
+'entityType' => 'getEntityType',
 'enabled' => 'getEnabled',
 'key' => 'getKey',
 'notes' => 'getNotes'    ];
@@ -195,8 +195,8 @@ class PutFlagRequest implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['data_records_enabled'] = isset($data['data_records_enabled']) ? $data['data_records_enabled'] : null;
-        $this->container['entity_type'] = isset($data['entity_type']) ? $data['entity_type'] : null;
+        $this->container['dataRecordsEnabled'] = isset($data['dataRecordsEnabled']) ? $data['dataRecordsEnabled'] : null;
+        $this->container['entityType'] = isset($data['entityType']) ? $data['entityType'] : null;
         $this->container['enabled'] = isset($data['enabled']) ? $data['enabled'] : null;
         $this->container['key'] = isset($data['key']) ? $data['key'] : null;
         $this->container['notes'] = isset($data['notes']) ? $data['notes'] : null;
@@ -251,49 +251,49 @@ class PutFlagRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets data_records_enabled
+     * Gets dataRecordsEnabled
      *
      * @return bool
      */
     public function getDataRecordsEnabled()
     {
-        return $this->container['data_records_enabled'];
+        return $this->container['dataRecordsEnabled'];
     }
 
     /**
-     * Sets data_records_enabled
+     * Sets dataRecordsEnabled
      *
-     * @param bool $data_records_enabled enabled data records will get data logging in the metrics pipeline, for example, kafka.
+     * @param bool $dataRecordsEnabled enabled data records will get data logging in the metrics pipeline, for example, kafka.
      *
      * @return $this
      */
-    public function setDataRecordsEnabled($data_records_enabled)
+    public function setDataRecordsEnabled($dataRecordsEnabled)
     {
-        $this->container['data_records_enabled'] = $data_records_enabled;
+        $this->container['dataRecordsEnabled'] = $dataRecordsEnabled;
 
         return $this;
     }
 
     /**
-     * Gets entity_type
+     * Gets entityType
      *
      * @return string
      */
     public function getEntityType()
     {
-        return $this->container['entity_type'];
+        return $this->container['entityType'];
     }
 
     /**
-     * Sets entity_type
+     * Sets entityType
      *
-     * @param string $entity_type it will overwrite entityType into evaluation logs if it's not empty
+     * @param string $entityType it will overwrite entityType into evaluation logs if it's not empty
      *
      * @return $this
      */
-    public function setEntityType($entity_type)
+    public function setEntityType($entityType)
     {
-        $this->container['entity_type'] = $entity_type;
+        $this->container['entityType'] = $entityType;
 
         return $this;
     }

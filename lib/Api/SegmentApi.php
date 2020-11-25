@@ -90,15 +90,15 @@ class SegmentApi
      * Operation createSegment
      *
      * @param  \Ayaya\FlagrClient\Model\CreateSegmentRequest $body create a segment under a flag (required)
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ayaya\FlagrClient\Model\Segment
      */
-    public function createSegment($body, $flag_id)
+    public function createSegment($body, $flagID)
     {
-        list($response) = $this->createSegmentWithHttpInfo($body, $flag_id);
+        list($response) = $this->createSegmentWithHttpInfo($body, $flagID);
         return $response;
     }
 
@@ -106,16 +106,16 @@ class SegmentApi
      * Operation createSegmentWithHttpInfo
      *
      * @param  \Ayaya\FlagrClient\Model\CreateSegmentRequest $body create a segment under a flag (required)
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ayaya\FlagrClient\Model\Segment, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createSegmentWithHttpInfo($body, $flag_id)
+    public function createSegmentWithHttpInfo($body, $flagID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Segment';
-        $request = $this->createSegmentRequest($body, $flag_id);
+        $request = $this->createSegmentRequest($body, $flagID);
 
         try {
             $options = $this->createHttpClientOption();
@@ -190,14 +190,14 @@ class SegmentApi
      * 
      *
      * @param  \Ayaya\FlagrClient\Model\CreateSegmentRequest $body create a segment under a flag (required)
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createSegmentAsync($body, $flag_id)
+    public function createSegmentAsync($body, $flagID)
     {
-        return $this->createSegmentAsyncWithHttpInfo($body, $flag_id)
+        return $this->createSegmentAsyncWithHttpInfo($body, $flagID)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -211,15 +211,15 @@ class SegmentApi
      * 
      *
      * @param  \Ayaya\FlagrClient\Model\CreateSegmentRequest $body create a segment under a flag (required)
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createSegmentAsyncWithHttpInfo($body, $flag_id)
+    public function createSegmentAsyncWithHttpInfo($body, $flagID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Segment';
-        $request = $this->createSegmentRequest($body, $flag_id);
+        $request = $this->createSegmentRequest($body, $flagID);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -262,12 +262,12 @@ class SegmentApi
      * Create request for operation 'createSegment'
      *
      * @param  \Ayaya\FlagrClient\Model\CreateSegmentRequest $body create a segment under a flag (required)
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createSegmentRequest($body, $flag_id)
+    protected function createSegmentRequest($body, $flagID)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
@@ -275,10 +275,10 @@ class SegmentApi
                 'Missing the required parameter $body when calling createSegment'
             );
         }
-        // verify the required parameter 'flag_id' is set
-        if ($flag_id === null || (is_array($flag_id) && count($flag_id) === 0)) {
+        // verify the required parameter 'flagID' is set
+        if ($flagID === null || (is_array($flagID) && count($flagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flag_id when calling createSegment'
+                'Missing the required parameter $flagID when calling createSegment'
             );
         }
 
@@ -291,10 +291,10 @@ class SegmentApi
 
 
         // path params
-        if ($flag_id !== null) {
+        if ($flagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'flagID' . '}',
-                ObjectSerializer::toPathValue($flag_id),
+                ObjectSerializer::toPathValue($flagID),
                 $resourcePath
             );
         }
@@ -369,32 +369,32 @@ class SegmentApi
     /**
      * Operation deleteSegment
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteSegment($flag_id, $segment_id)
+    public function deleteSegment($flagID, $segmentID)
     {
-        $this->deleteSegmentWithHttpInfo($flag_id, $segment_id);
+        $this->deleteSegmentWithHttpInfo($flagID, $segmentID);
     }
 
     /**
      * Operation deleteSegmentWithHttpInfo
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteSegmentWithHttpInfo($flag_id, $segment_id)
+    public function deleteSegmentWithHttpInfo($flagID, $segmentID)
     {
         $returnType = '';
-        $request = $this->deleteSegmentRequest($flag_id, $segment_id);
+        $request = $this->deleteSegmentRequest($flagID, $segmentID);
 
         try {
             $options = $this->createHttpClientOption();
@@ -446,15 +446,15 @@ class SegmentApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteSegmentAsync($flag_id, $segment_id)
+    public function deleteSegmentAsync($flagID, $segmentID)
     {
-        return $this->deleteSegmentAsyncWithHttpInfo($flag_id, $segment_id)
+        return $this->deleteSegmentAsyncWithHttpInfo($flagID, $segmentID)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -467,16 +467,16 @@ class SegmentApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteSegmentAsyncWithHttpInfo($flag_id, $segment_id)
+    public function deleteSegmentAsyncWithHttpInfo($flagID, $segmentID)
     {
         $returnType = '';
-        $request = $this->deleteSegmentRequest($flag_id, $segment_id);
+        $request = $this->deleteSegmentRequest($flagID, $segmentID);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -504,24 +504,24 @@ class SegmentApi
     /**
      * Create request for operation 'deleteSegment'
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteSegmentRequest($flag_id, $segment_id)
+    protected function deleteSegmentRequest($flagID, $segmentID)
     {
-        // verify the required parameter 'flag_id' is set
-        if ($flag_id === null || (is_array($flag_id) && count($flag_id) === 0)) {
+        // verify the required parameter 'flagID' is set
+        if ($flagID === null || (is_array($flagID) && count($flagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flag_id when calling deleteSegment'
+                'Missing the required parameter $flagID when calling deleteSegment'
             );
         }
-        // verify the required parameter 'segment_id' is set
-        if ($segment_id === null || (is_array($segment_id) && count($segment_id) === 0)) {
+        // verify the required parameter 'segmentID' is set
+        if ($segmentID === null || (is_array($segmentID) && count($segmentID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $segment_id when calling deleteSegment'
+                'Missing the required parameter $segmentID when calling deleteSegment'
             );
         }
 
@@ -534,18 +534,18 @@ class SegmentApi
 
 
         // path params
-        if ($flag_id !== null) {
+        if ($flagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'flagID' . '}',
-                ObjectSerializer::toPathValue($flag_id),
+                ObjectSerializer::toPathValue($flagID),
                 $resourcePath
             );
         }
         // path params
-        if ($segment_id !== null) {
+        if ($segmentID !== null) {
             $resourcePath = str_replace(
                 '{' . 'segmentID' . '}',
-                ObjectSerializer::toPathValue($segment_id),
+                ObjectSerializer::toPathValue($segmentID),
                 $resourcePath
             );
         }
@@ -617,31 +617,31 @@ class SegmentApi
     /**
      * Operation findSegments
      *
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ayaya\FlagrClient\Model\Segment[]
      */
-    public function findSegments($flag_id)
+    public function findSegments($flagID)
     {
-        list($response) = $this->findSegmentsWithHttpInfo($flag_id);
+        list($response) = $this->findSegmentsWithHttpInfo($flagID);
         return $response;
     }
 
     /**
      * Operation findSegmentsWithHttpInfo
      *
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ayaya\FlagrClient\Model\Segment[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function findSegmentsWithHttpInfo($flag_id)
+    public function findSegmentsWithHttpInfo($flagID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Segment[]';
-        $request = $this->findSegmentsRequest($flag_id);
+        $request = $this->findSegmentsRequest($flagID);
 
         try {
             $options = $this->createHttpClientOption();
@@ -715,14 +715,14 @@ class SegmentApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findSegmentsAsync($flag_id)
+    public function findSegmentsAsync($flagID)
     {
-        return $this->findSegmentsAsyncWithHttpInfo($flag_id)
+        return $this->findSegmentsAsyncWithHttpInfo($flagID)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -735,15 +735,15 @@ class SegmentApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findSegmentsAsyncWithHttpInfo($flag_id)
+    public function findSegmentsAsyncWithHttpInfo($flagID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Segment[]';
-        $request = $this->findSegmentsRequest($flag_id);
+        $request = $this->findSegmentsRequest($flagID);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -785,17 +785,17 @@ class SegmentApi
     /**
      * Create request for operation 'findSegments'
      *
-     * @param  int $flag_id numeric ID of the flag to get (required)
+     * @param  int $flagID numeric ID of the flag to get (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function findSegmentsRequest($flag_id)
+    protected function findSegmentsRequest($flagID)
     {
-        // verify the required parameter 'flag_id' is set
-        if ($flag_id === null || (is_array($flag_id) && count($flag_id) === 0)) {
+        // verify the required parameter 'flagID' is set
+        if ($flagID === null || (is_array($flagID) && count($flagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flag_id when calling findSegments'
+                'Missing the required parameter $flagID when calling findSegments'
             );
         }
 
@@ -808,10 +808,10 @@ class SegmentApi
 
 
         // path params
-        if ($flag_id !== null) {
+        if ($flagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'flagID' . '}',
-                ObjectSerializer::toPathValue($flag_id),
+                ObjectSerializer::toPathValue($flagID),
                 $resourcePath
             );
         }
@@ -884,16 +884,16 @@ class SegmentApi
      * Operation putSegment
      *
      * @param  \Ayaya\FlagrClient\Model\PutSegmentRequest $body update a segment (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ayaya\FlagrClient\Model\Segment
      */
-    public function putSegment($body, $flag_id, $segment_id)
+    public function putSegment($body, $flagID, $segmentID)
     {
-        list($response) = $this->putSegmentWithHttpInfo($body, $flag_id, $segment_id);
+        list($response) = $this->putSegmentWithHttpInfo($body, $flagID, $segmentID);
         return $response;
     }
 
@@ -901,17 +901,17 @@ class SegmentApi
      * Operation putSegmentWithHttpInfo
      *
      * @param  \Ayaya\FlagrClient\Model\PutSegmentRequest $body update a segment (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ayaya\FlagrClient\Model\Segment, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putSegmentWithHttpInfo($body, $flag_id, $segment_id)
+    public function putSegmentWithHttpInfo($body, $flagID, $segmentID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Segment';
-        $request = $this->putSegmentRequest($body, $flag_id, $segment_id);
+        $request = $this->putSegmentRequest($body, $flagID, $segmentID);
 
         try {
             $options = $this->createHttpClientOption();
@@ -986,15 +986,15 @@ class SegmentApi
      * 
      *
      * @param  \Ayaya\FlagrClient\Model\PutSegmentRequest $body update a segment (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putSegmentAsync($body, $flag_id, $segment_id)
+    public function putSegmentAsync($body, $flagID, $segmentID)
     {
-        return $this->putSegmentAsyncWithHttpInfo($body, $flag_id, $segment_id)
+        return $this->putSegmentAsyncWithHttpInfo($body, $flagID, $segmentID)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1008,16 +1008,16 @@ class SegmentApi
      * 
      *
      * @param  \Ayaya\FlagrClient\Model\PutSegmentRequest $body update a segment (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putSegmentAsyncWithHttpInfo($body, $flag_id, $segment_id)
+    public function putSegmentAsyncWithHttpInfo($body, $flagID, $segmentID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Segment';
-        $request = $this->putSegmentRequest($body, $flag_id, $segment_id);
+        $request = $this->putSegmentRequest($body, $flagID, $segmentID);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1060,13 +1060,13 @@ class SegmentApi
      * Create request for operation 'putSegment'
      *
      * @param  \Ayaya\FlagrClient\Model\PutSegmentRequest $body update a segment (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function putSegmentRequest($body, $flag_id, $segment_id)
+    protected function putSegmentRequest($body, $flagID, $segmentID)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
@@ -1074,16 +1074,16 @@ class SegmentApi
                 'Missing the required parameter $body when calling putSegment'
             );
         }
-        // verify the required parameter 'flag_id' is set
-        if ($flag_id === null || (is_array($flag_id) && count($flag_id) === 0)) {
+        // verify the required parameter 'flagID' is set
+        if ($flagID === null || (is_array($flagID) && count($flagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flag_id when calling putSegment'
+                'Missing the required parameter $flagID when calling putSegment'
             );
         }
-        // verify the required parameter 'segment_id' is set
-        if ($segment_id === null || (is_array($segment_id) && count($segment_id) === 0)) {
+        // verify the required parameter 'segmentID' is set
+        if ($segmentID === null || (is_array($segmentID) && count($segmentID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $segment_id when calling putSegment'
+                'Missing the required parameter $segmentID when calling putSegment'
             );
         }
 
@@ -1096,18 +1096,18 @@ class SegmentApi
 
 
         // path params
-        if ($flag_id !== null) {
+        if ($flagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'flagID' . '}',
-                ObjectSerializer::toPathValue($flag_id),
+                ObjectSerializer::toPathValue($flagID),
                 $resourcePath
             );
         }
         // path params
-        if ($segment_id !== null) {
+        if ($segmentID !== null) {
             $resourcePath = str_replace(
                 '{' . 'segmentID' . '}',
-                ObjectSerializer::toPathValue($segment_id),
+                ObjectSerializer::toPathValue($segmentID),
                 $resourcePath
             );
         }
@@ -1183,31 +1183,31 @@ class SegmentApi
      * Operation putSegmentsReorder
      *
      * @param  \Ayaya\FlagrClient\Model\PutSegmentReorderRequest $body reorder segments (required)
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function putSegmentsReorder($body, $flag_id)
+    public function putSegmentsReorder($body, $flagID)
     {
-        $this->putSegmentsReorderWithHttpInfo($body, $flag_id);
+        $this->putSegmentsReorderWithHttpInfo($body, $flagID);
     }
 
     /**
      * Operation putSegmentsReorderWithHttpInfo
      *
      * @param  \Ayaya\FlagrClient\Model\PutSegmentReorderRequest $body reorder segments (required)
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putSegmentsReorderWithHttpInfo($body, $flag_id)
+    public function putSegmentsReorderWithHttpInfo($body, $flagID)
     {
         $returnType = '';
-        $request = $this->putSegmentsReorderRequest($body, $flag_id);
+        $request = $this->putSegmentsReorderRequest($body, $flagID);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1260,14 +1260,14 @@ class SegmentApi
      * 
      *
      * @param  \Ayaya\FlagrClient\Model\PutSegmentReorderRequest $body reorder segments (required)
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putSegmentsReorderAsync($body, $flag_id)
+    public function putSegmentsReorderAsync($body, $flagID)
     {
-        return $this->putSegmentsReorderAsyncWithHttpInfo($body, $flag_id)
+        return $this->putSegmentsReorderAsyncWithHttpInfo($body, $flagID)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1281,15 +1281,15 @@ class SegmentApi
      * 
      *
      * @param  \Ayaya\FlagrClient\Model\PutSegmentReorderRequest $body reorder segments (required)
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putSegmentsReorderAsyncWithHttpInfo($body, $flag_id)
+    public function putSegmentsReorderAsyncWithHttpInfo($body, $flagID)
     {
         $returnType = '';
-        $request = $this->putSegmentsReorderRequest($body, $flag_id);
+        $request = $this->putSegmentsReorderRequest($body, $flagID);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1318,12 +1318,12 @@ class SegmentApi
      * Create request for operation 'putSegmentsReorder'
      *
      * @param  \Ayaya\FlagrClient\Model\PutSegmentReorderRequest $body reorder segments (required)
-     * @param  int $flag_id numeric ID of the flag (required)
+     * @param  int $flagID numeric ID of the flag (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function putSegmentsReorderRequest($body, $flag_id)
+    protected function putSegmentsReorderRequest($body, $flagID)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
@@ -1331,10 +1331,10 @@ class SegmentApi
                 'Missing the required parameter $body when calling putSegmentsReorder'
             );
         }
-        // verify the required parameter 'flag_id' is set
-        if ($flag_id === null || (is_array($flag_id) && count($flag_id) === 0)) {
+        // verify the required parameter 'flagID' is set
+        if ($flagID === null || (is_array($flagID) && count($flagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flag_id when calling putSegmentsReorder'
+                'Missing the required parameter $flagID when calling putSegmentsReorder'
             );
         }
 
@@ -1347,10 +1347,10 @@ class SegmentApi
 
 
         // path params
-        if ($flag_id !== null) {
+        if ($flagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'flagID' . '}',
-                ObjectSerializer::toPathValue($flag_id),
+                ObjectSerializer::toPathValue($flagID),
                 $resourcePath
             );
         }

@@ -336,31 +336,31 @@ class ExportApi
     /**
      * Operation getExportSqlite
      *
-     * @param  bool $exclude_snapshots export without snapshots data - useful for smaller db without snapshots (optional)
+     * @param  bool $excludeSnapshots export without snapshots data - useful for smaller db without snapshots (optional)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return string
      */
-    public function getExportSqlite($exclude_snapshots = null)
+    public function getExportSqlite($excludeSnapshots = null)
     {
-        list($response) = $this->getExportSqliteWithHttpInfo($exclude_snapshots);
+        list($response) = $this->getExportSqliteWithHttpInfo($excludeSnapshots);
         return $response;
     }
 
     /**
      * Operation getExportSqliteWithHttpInfo
      *
-     * @param  bool $exclude_snapshots export without snapshots data - useful for smaller db without snapshots (optional)
+     * @param  bool $excludeSnapshots export without snapshots data - useful for smaller db without snapshots (optional)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getExportSqliteWithHttpInfo($exclude_snapshots = null)
+    public function getExportSqliteWithHttpInfo($excludeSnapshots = null)
     {
         $returnType = 'string';
-        $request = $this->getExportSqliteRequest($exclude_snapshots);
+        $request = $this->getExportSqliteRequest($excludeSnapshots);
 
         try {
             $options = $this->createHttpClientOption();
@@ -434,14 +434,14 @@ class ExportApi
      *
      * 
      *
-     * @param  bool $exclude_snapshots export without snapshots data - useful for smaller db without snapshots (optional)
+     * @param  bool $excludeSnapshots export without snapshots data - useful for smaller db without snapshots (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getExportSqliteAsync($exclude_snapshots = null)
+    public function getExportSqliteAsync($excludeSnapshots = null)
     {
-        return $this->getExportSqliteAsyncWithHttpInfo($exclude_snapshots)
+        return $this->getExportSqliteAsyncWithHttpInfo($excludeSnapshots)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -454,15 +454,15 @@ class ExportApi
      *
      * 
      *
-     * @param  bool $exclude_snapshots export without snapshots data - useful for smaller db without snapshots (optional)
+     * @param  bool $excludeSnapshots export without snapshots data - useful for smaller db without snapshots (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getExportSqliteAsyncWithHttpInfo($exclude_snapshots = null)
+    public function getExportSqliteAsyncWithHttpInfo($excludeSnapshots = null)
     {
         $returnType = 'string';
-        $request = $this->getExportSqliteRequest($exclude_snapshots);
+        $request = $this->getExportSqliteRequest($excludeSnapshots);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -504,12 +504,12 @@ class ExportApi
     /**
      * Create request for operation 'getExportSqlite'
      *
-     * @param  bool $exclude_snapshots export without snapshots data - useful for smaller db without snapshots (optional)
+     * @param  bool $excludeSnapshots export without snapshots data - useful for smaller db without snapshots (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getExportSqliteRequest($exclude_snapshots = null)
+    protected function getExportSqliteRequest($excludeSnapshots = null)
     {
 
         $resourcePath = '/export/sqlite';
@@ -520,8 +520,8 @@ class ExportApi
         $multipart = false;
 
         // query params
-        if ($exclude_snapshots !== null) {
-            $queryParams['exclude_snapshots'] = ObjectSerializer::toQueryValue($exclude_snapshots, null);
+        if ($excludeSnapshots !== null) {
+            $queryParams['exclude_snapshots'] = ObjectSerializer::toQueryValue($excludeSnapshots, null);
         }
 
 

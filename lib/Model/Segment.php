@@ -61,7 +61,7 @@ class Segment implements ModelInterface, ArrayAccess
 'constraints' => '\Ayaya\FlagrClient\Model\Constraint[]',
 'distributions' => '\Ayaya\FlagrClient\Model\Distribution[]',
 'rank' => 'int',
-'rollout_percent' => 'int'    ];
+'rolloutPercent' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -74,7 +74,7 @@ class Segment implements ModelInterface, ArrayAccess
 'constraints' => null,
 'distributions' => null,
 'rank' => 'int64',
-'rollout_percent' => 'int64'    ];
+'rolloutPercent' => 'int64'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -108,7 +108,7 @@ class Segment implements ModelInterface, ArrayAccess
 'constraints' => 'constraints',
 'distributions' => 'distributions',
 'rank' => 'rank',
-'rollout_percent' => 'rolloutPercent'    ];
+'rolloutPercent' => 'rolloutPercent'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -121,7 +121,7 @@ class Segment implements ModelInterface, ArrayAccess
 'constraints' => 'setConstraints',
 'distributions' => 'setDistributions',
 'rank' => 'setRank',
-'rollout_percent' => 'setRolloutPercent'    ];
+'rolloutPercent' => 'setRolloutPercent'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -134,7 +134,7 @@ class Segment implements ModelInterface, ArrayAccess
 'constraints' => 'getConstraints',
 'distributions' => 'getDistributions',
 'rank' => 'getRank',
-'rollout_percent' => 'getRolloutPercent'    ];
+'rolloutPercent' => 'getRolloutPercent'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -199,7 +199,7 @@ class Segment implements ModelInterface, ArrayAccess
         $this->container['constraints'] = isset($data['constraints']) ? $data['constraints'] : null;
         $this->container['distributions'] = isset($data['distributions']) ? $data['distributions'] : null;
         $this->container['rank'] = isset($data['rank']) ? $data['rank'] : null;
-        $this->container['rollout_percent'] = isset($data['rollout_percent']) ? $data['rollout_percent'] : null;
+        $this->container['rolloutPercent'] = isset($data['rolloutPercent']) ? $data['rolloutPercent'] : null;
     }
 
     /**
@@ -217,8 +217,8 @@ class Segment implements ModelInterface, ArrayAccess
         if ($this->container['rank'] === null) {
             $invalidProperties[] = "'rank' can't be null";
         }
-        if ($this->container['rollout_percent'] === null) {
-            $invalidProperties[] = "'rollout_percent' can't be null";
+        if ($this->container['rolloutPercent'] === null) {
+            $invalidProperties[] = "'rolloutPercent' can't be null";
         }
         return $invalidProperties;
     }
@@ -356,25 +356,25 @@ class Segment implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets rollout_percent
+     * Gets rolloutPercent
      *
      * @return int
      */
     public function getRolloutPercent()
     {
-        return $this->container['rollout_percent'];
+        return $this->container['rolloutPercent'];
     }
 
     /**
-     * Sets rollout_percent
+     * Sets rolloutPercent
      *
-     * @param int $rollout_percent rollout_percent
+     * @param int $rolloutPercent rolloutPercent
      *
      * @return $this
      */
-    public function setRolloutPercent($rollout_percent)
+    public function setRolloutPercent($rolloutPercent)
     {
-        $this->container['rollout_percent'] = $rollout_percent;
+        $this->container['rolloutPercent'] = $rolloutPercent;
 
         return $this;
     }

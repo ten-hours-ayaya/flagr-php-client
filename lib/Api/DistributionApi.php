@@ -89,33 +89,33 @@ class DistributionApi
     /**
      * Operation findDistributions
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ayaya\FlagrClient\Model\Distribution[]
      */
-    public function findDistributions($flag_id, $segment_id)
+    public function findDistributions($flagID, $segmentID)
     {
-        list($response) = $this->findDistributionsWithHttpInfo($flag_id, $segment_id);
+        list($response) = $this->findDistributionsWithHttpInfo($flagID, $segmentID);
         return $response;
     }
 
     /**
      * Operation findDistributionsWithHttpInfo
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ayaya\FlagrClient\Model\Distribution[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function findDistributionsWithHttpInfo($flag_id, $segment_id)
+    public function findDistributionsWithHttpInfo($flagID, $segmentID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Distribution[]';
-        $request = $this->findDistributionsRequest($flag_id, $segment_id);
+        $request = $this->findDistributionsRequest($flagID, $segmentID);
 
         try {
             $options = $this->createHttpClientOption();
@@ -189,15 +189,15 @@ class DistributionApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findDistributionsAsync($flag_id, $segment_id)
+    public function findDistributionsAsync($flagID, $segmentID)
     {
-        return $this->findDistributionsAsyncWithHttpInfo($flag_id, $segment_id)
+        return $this->findDistributionsAsyncWithHttpInfo($flagID, $segmentID)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -210,16 +210,16 @@ class DistributionApi
      *
      * 
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findDistributionsAsyncWithHttpInfo($flag_id, $segment_id)
+    public function findDistributionsAsyncWithHttpInfo($flagID, $segmentID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Distribution[]';
-        $request = $this->findDistributionsRequest($flag_id, $segment_id);
+        $request = $this->findDistributionsRequest($flagID, $segmentID);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -261,24 +261,24 @@ class DistributionApi
     /**
      * Create request for operation 'findDistributions'
      *
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function findDistributionsRequest($flag_id, $segment_id)
+    protected function findDistributionsRequest($flagID, $segmentID)
     {
-        // verify the required parameter 'flag_id' is set
-        if ($flag_id === null || (is_array($flag_id) && count($flag_id) === 0)) {
+        // verify the required parameter 'flagID' is set
+        if ($flagID === null || (is_array($flagID) && count($flagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flag_id when calling findDistributions'
+                'Missing the required parameter $flagID when calling findDistributions'
             );
         }
-        // verify the required parameter 'segment_id' is set
-        if ($segment_id === null || (is_array($segment_id) && count($segment_id) === 0)) {
+        // verify the required parameter 'segmentID' is set
+        if ($segmentID === null || (is_array($segmentID) && count($segmentID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $segment_id when calling findDistributions'
+                'Missing the required parameter $segmentID when calling findDistributions'
             );
         }
 
@@ -291,18 +291,18 @@ class DistributionApi
 
 
         // path params
-        if ($flag_id !== null) {
+        if ($flagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'flagID' . '}',
-                ObjectSerializer::toPathValue($flag_id),
+                ObjectSerializer::toPathValue($flagID),
                 $resourcePath
             );
         }
         // path params
-        if ($segment_id !== null) {
+        if ($segmentID !== null) {
             $resourcePath = str_replace(
                 '{' . 'segmentID' . '}',
-                ObjectSerializer::toPathValue($segment_id),
+                ObjectSerializer::toPathValue($segmentID),
                 $resourcePath
             );
         }
@@ -375,16 +375,16 @@ class DistributionApi
      * Operation putDistributions
      *
      * @param  \Ayaya\FlagrClient\Model\PutDistributionsRequest $body array of distributions (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ayaya\FlagrClient\Model\Distribution[]
      */
-    public function putDistributions($body, $flag_id, $segment_id)
+    public function putDistributions($body, $flagID, $segmentID)
     {
-        list($response) = $this->putDistributionsWithHttpInfo($body, $flag_id, $segment_id);
+        list($response) = $this->putDistributionsWithHttpInfo($body, $flagID, $segmentID);
         return $response;
     }
 
@@ -392,17 +392,17 @@ class DistributionApi
      * Operation putDistributionsWithHttpInfo
      *
      * @param  \Ayaya\FlagrClient\Model\PutDistributionsRequest $body array of distributions (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \Ayaya\FlagrClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ayaya\FlagrClient\Model\Distribution[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function putDistributionsWithHttpInfo($body, $flag_id, $segment_id)
+    public function putDistributionsWithHttpInfo($body, $flagID, $segmentID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Distribution[]';
-        $request = $this->putDistributionsRequest($body, $flag_id, $segment_id);
+        $request = $this->putDistributionsRequest($body, $flagID, $segmentID);
 
         try {
             $options = $this->createHttpClientOption();
@@ -477,15 +477,15 @@ class DistributionApi
      * 
      *
      * @param  \Ayaya\FlagrClient\Model\PutDistributionsRequest $body array of distributions (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putDistributionsAsync($body, $flag_id, $segment_id)
+    public function putDistributionsAsync($body, $flagID, $segmentID)
     {
-        return $this->putDistributionsAsyncWithHttpInfo($body, $flag_id, $segment_id)
+        return $this->putDistributionsAsyncWithHttpInfo($body, $flagID, $segmentID)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -499,16 +499,16 @@ class DistributionApi
      * 
      *
      * @param  \Ayaya\FlagrClient\Model\PutDistributionsRequest $body array of distributions (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putDistributionsAsyncWithHttpInfo($body, $flag_id, $segment_id)
+    public function putDistributionsAsyncWithHttpInfo($body, $flagID, $segmentID)
     {
         $returnType = '\Ayaya\FlagrClient\Model\Distribution[]';
-        $request = $this->putDistributionsRequest($body, $flag_id, $segment_id);
+        $request = $this->putDistributionsRequest($body, $flagID, $segmentID);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -551,13 +551,13 @@ class DistributionApi
      * Create request for operation 'putDistributions'
      *
      * @param  \Ayaya\FlagrClient\Model\PutDistributionsRequest $body array of distributions (required)
-     * @param  int $flag_id numeric ID of the flag (required)
-     * @param  int $segment_id numeric ID of the segment (required)
+     * @param  int $flagID numeric ID of the flag (required)
+     * @param  int $segmentID numeric ID of the segment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function putDistributionsRequest($body, $flag_id, $segment_id)
+    protected function putDistributionsRequest($body, $flagID, $segmentID)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
@@ -565,16 +565,16 @@ class DistributionApi
                 'Missing the required parameter $body when calling putDistributions'
             );
         }
-        // verify the required parameter 'flag_id' is set
-        if ($flag_id === null || (is_array($flag_id) && count($flag_id) === 0)) {
+        // verify the required parameter 'flagID' is set
+        if ($flagID === null || (is_array($flagID) && count($flagID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $flag_id when calling putDistributions'
+                'Missing the required parameter $flagID when calling putDistributions'
             );
         }
-        // verify the required parameter 'segment_id' is set
-        if ($segment_id === null || (is_array($segment_id) && count($segment_id) === 0)) {
+        // verify the required parameter 'segmentID' is set
+        if ($segmentID === null || (is_array($segmentID) && count($segmentID) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $segment_id when calling putDistributions'
+                'Missing the required parameter $segmentID when calling putDistributions'
             );
         }
 
@@ -587,18 +587,18 @@ class DistributionApi
 
 
         // path params
-        if ($flag_id !== null) {
+        if ($flagID !== null) {
             $resourcePath = str_replace(
                 '{' . 'flagID' . '}',
-                ObjectSerializer::toPathValue($flag_id),
+                ObjectSerializer::toPathValue($flagID),
                 $resourcePath
             );
         }
         // path params
-        if ($segment_id !== null) {
+        if ($segmentID !== null) {
             $resourcePath = str_replace(
                 '{' . 'segmentID' . '}',
-                ObjectSerializer::toPathValue($segment_id),
+                ObjectSerializer::toPathValue($segmentID),
                 $resourcePath
             );
         }

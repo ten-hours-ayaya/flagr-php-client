@@ -56,7 +56,7 @@ class EvaluationBatchResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'evaluation_results' => '\Ayaya\FlagrClient\Model\EvalResult[]'    ];
+        'evaluationResults' => '\Ayaya\FlagrClient\Model\EvalResult[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -64,7 +64,7 @@ class EvaluationBatchResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'evaluation_results' => null    ];
+        'evaluationResults' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -93,7 +93,7 @@ class EvaluationBatchResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'evaluation_results' => 'evaluationResults'    ];
+        'evaluationResults' => 'evaluationResults'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,7 +101,7 @@ class EvaluationBatchResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'evaluation_results' => 'setEvaluationResults'    ];
+        'evaluationResults' => 'setEvaluationResults'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -109,7 +109,7 @@ class EvaluationBatchResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'evaluation_results' => 'getEvaluationResults'    ];
+        'evaluationResults' => 'getEvaluationResults'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -169,7 +169,7 @@ class EvaluationBatchResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['evaluation_results'] = isset($data['evaluation_results']) ? $data['evaluation_results'] : null;
+        $this->container['evaluationResults'] = isset($data['evaluationResults']) ? $data['evaluationResults'] : null;
     }
 
     /**
@@ -181,8 +181,8 @@ class EvaluationBatchResponse implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['evaluation_results'] === null) {
-            $invalidProperties[] = "'evaluation_results' can't be null";
+        if ($this->container['evaluationResults'] === null) {
+            $invalidProperties[] = "'evaluationResults' can't be null";
         }
         return $invalidProperties;
     }
@@ -200,25 +200,25 @@ class EvaluationBatchResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets evaluation_results
+     * Gets evaluationResults
      *
      * @return \Ayaya\FlagrClient\Model\EvalResult[]
      */
     public function getEvaluationResults()
     {
-        return $this->container['evaluation_results'];
+        return $this->container['evaluationResults'];
     }
 
     /**
-     * Sets evaluation_results
+     * Sets evaluationResults
      *
-     * @param \Ayaya\FlagrClient\Model\EvalResult[] $evaluation_results evaluation_results
+     * @param \Ayaya\FlagrClient\Model\EvalResult[] $evaluationResults evaluationResults
      *
      * @return $this
      */
-    public function setEvaluationResults($evaluation_results)
+    public function setEvaluationResults($evaluationResults)
     {
-        $this->container['evaluation_results'] = $evaluation_results;
+        $this->container['evaluationResults'] = $evaluationResults;
 
         return $this;
     }

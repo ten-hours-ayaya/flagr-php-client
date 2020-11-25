@@ -61,7 +61,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteFlag**
-> deleteFlag($flag_id)
+> deleteFlag($flagID)
 
 
 
@@ -75,10 +75,10 @@ $apiInstance = new Ayaya\FlagrClient\Api\FlagApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$flag_id = 789; // int | numeric ID of the flag
+$flagID = 789; // int | numeric ID of the flag
 
 try {
-    $apiInstance->deleteFlag($flag_id);
+    $apiInstance->deleteFlag($flagID);
 } catch (Exception $e) {
     echo 'Exception when calling FlagApi->deleteFlag: ', $e->getMessage(), PHP_EOL;
 }
@@ -89,7 +89,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **flag_id** | **int**| numeric ID of the flag |
+ **flagID** | **int**| numeric ID of the flag |
 
 ### Return type
 
@@ -107,7 +107,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **findFlags**
-> \Ayaya\FlagrClient\Model\Flag[] findFlags($limit, $enabled, $description, $tags, $description_like, $key, $offset, $preload)
+> \Ayaya\FlagrClient\Model\Flag[] findFlags($limit, $enabled, $description, $tags, $descriptionLike, $key, $offset, $preload)
 
 
 
@@ -125,13 +125,13 @@ $limit = 789; // int | the numbers of flags to return
 $enabled = true; // bool | return flags having given enabled status
 $description = "description_example"; // string | return flags exactly matching given description
 $tags = "tags_example"; // string | return flags with the given tags (comma separated)
-$description_like = "description_like_example"; // string | return flags partially matching given description
+$descriptionLike = "descriptionLike_example"; // string | return flags partially matching given description
 $key = "key_example"; // string | return flags matching given key
 $offset = 789; // int | return flags given the offset, it should usually set together with limit
 $preload = true; // bool | return flags with preloaded segments and variants
 
 try {
-    $result = $apiInstance->findFlags($limit, $enabled, $description, $tags, $description_like, $key, $offset, $preload);
+    $result = $apiInstance->findFlags($limit, $enabled, $description, $tags, $descriptionLike, $key, $offset, $preload);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FlagApi->findFlags: ', $e->getMessage(), PHP_EOL;
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
  **enabled** | **bool**| return flags having given enabled status | [optional]
  **description** | **string**| return flags exactly matching given description | [optional]
  **tags** | **string**| return flags with the given tags (comma separated) | [optional]
- **description_like** | **string**| return flags partially matching given description | [optional]
+ **descriptionLike** | **string**| return flags partially matching given description | [optional]
  **key** | **string**| return flags matching given key | [optional]
  **offset** | **int**| return flags given the offset, it should usually set together with limit | [optional]
  **preload** | **bool**| return flags with preloaded segments and variants | [optional]
@@ -168,7 +168,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFlag**
-> \Ayaya\FlagrClient\Model\Flag getFlag($flag_id)
+> \Ayaya\FlagrClient\Model\Flag getFlag($flagID)
 
 
 
@@ -182,10 +182,10 @@ $apiInstance = new Ayaya\FlagrClient\Api\FlagApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$flag_id = 789; // int | numeric ID of the flag to get
+$flagID = 789; // int | numeric ID of the flag to get
 
 try {
-    $result = $apiInstance->getFlag($flag_id);
+    $result = $apiInstance->getFlag($flagID);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FlagApi->getFlag: ', $e->getMessage(), PHP_EOL;
@@ -197,7 +197,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **flag_id** | **int**| numeric ID of the flag to get |
+ **flagID** | **int**| numeric ID of the flag to get |
 
 ### Return type
 
@@ -258,7 +258,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFlagSnapshots**
-> \Ayaya\FlagrClient\Model\FlagSnapshot[] getFlagSnapshots($flag_id)
+> \Ayaya\FlagrClient\Model\FlagSnapshot[] getFlagSnapshots($flagID)
 
 
 
@@ -272,10 +272,10 @@ $apiInstance = new Ayaya\FlagrClient\Api\FlagApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$flag_id = 789; // int | numeric ID of the flag to get
+$flagID = 789; // int | numeric ID of the flag to get
 
 try {
-    $result = $apiInstance->getFlagSnapshots($flag_id);
+    $result = $apiInstance->getFlagSnapshots($flagID);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FlagApi->getFlagSnapshots: ', $e->getMessage(), PHP_EOL;
@@ -287,7 +287,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **flag_id** | **int**| numeric ID of the flag to get |
+ **flagID** | **int**| numeric ID of the flag to get |
 
 ### Return type
 
@@ -305,7 +305,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putFlag**
-> \Ayaya\FlagrClient\Model\Flag putFlag($body, $flag_id)
+> \Ayaya\FlagrClient\Model\Flag putFlag($body, $flagID)
 
 
 
@@ -320,10 +320,10 @@ $apiInstance = new Ayaya\FlagrClient\Api\FlagApi(
     new GuzzleHttp\Client()
 );
 $body = new \Ayaya\FlagrClient\Model\PutFlagRequest(); // \Ayaya\FlagrClient\Model\PutFlagRequest | update a flag
-$flag_id = 789; // int | numeric ID of the flag to get
+$flagID = 789; // int | numeric ID of the flag to get
 
 try {
-    $result = $apiInstance->putFlag($body, $flag_id);
+    $result = $apiInstance->putFlag($body, $flagID);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FlagApi->putFlag: ', $e->getMessage(), PHP_EOL;
@@ -336,7 +336,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\Ayaya\FlagrClient\Model\PutFlagRequest**](../Model/PutFlagRequest.md)| update a flag |
- **flag_id** | **int**| numeric ID of the flag to get |
+ **flagID** | **int**| numeric ID of the flag to get |
 
 ### Return type
 
@@ -354,7 +354,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **setFlagEnabled**
-> \Ayaya\FlagrClient\Model\Flag setFlagEnabled($body, $flag_id)
+> \Ayaya\FlagrClient\Model\Flag setFlagEnabled($body, $flagID)
 
 
 
@@ -369,10 +369,10 @@ $apiInstance = new Ayaya\FlagrClient\Api\FlagApi(
     new GuzzleHttp\Client()
 );
 $body = new \Ayaya\FlagrClient\Model\SetFlagEnabledRequest(); // \Ayaya\FlagrClient\Model\SetFlagEnabledRequest | set flag enabled state
-$flag_id = 789; // int | numeric ID of the flag to get
+$flagID = 789; // int | numeric ID of the flag to get
 
 try {
-    $result = $apiInstance->setFlagEnabled($body, $flag_id);
+    $result = $apiInstance->setFlagEnabled($body, $flagID);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FlagApi->setFlagEnabled: ', $e->getMessage(), PHP_EOL;
@@ -385,7 +385,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\Ayaya\FlagrClient\Model\SetFlagEnabledRequest**](../Model/SetFlagEnabledRequest.md)| set flag enabled state |
- **flag_id** | **int**| numeric ID of the flag to get |
+ **flagID** | **int**| numeric ID of the flag to get |
 
 ### Return type
 
