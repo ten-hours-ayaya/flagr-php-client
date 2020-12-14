@@ -125,14 +125,14 @@ class FlagTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "data_records_enabled"
+     * Test attribute "dataRecordsEnabled"
      */
     public function testPropertyDataRecordsEnabled()
     {
     }
 
     /**
-     * Test attribute "entity_type"
+     * Test attribute "entityType"
      */
     public function testPropertyEntityType()
     {
@@ -146,21 +146,21 @@ class FlagTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "created_by"
+     * Test attribute "createdBy"
      */
     public function testPropertyCreatedBy()
     {
     }
 
     /**
-     * Test attribute "updated_by"
+     * Test attribute "updatedBy"
      */
     public function testPropertyUpdatedBy()
     {
     }
 
     /**
-     * Test attribute "updated_at"
+     * Test attribute "updatedAt"
      */
     public function testPropertyUpdatedAt()
     {

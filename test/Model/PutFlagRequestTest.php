@@ -83,14 +83,14 @@ class PutFlagRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "data_records_enabled"
+     * Test attribute "dataRecordsEnabled"
      */
     public function testPropertyDataRecordsEnabled()
     {
     }
 
     /**
-     * Test attribute "entity_type"
+     * Test attribute "entityType"
      */
     public function testPropertyEntityType()
     {

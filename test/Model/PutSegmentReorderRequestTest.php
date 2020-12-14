@@ -76,7 +76,7 @@ class PutSegmentReorderRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "segment_i_ds"
+     * Test attribute "segmentIDs"
      */
     public function testPropertySegmentIDs()
     {

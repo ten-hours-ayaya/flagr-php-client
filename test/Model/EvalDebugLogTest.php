@@ -76,7 +76,7 @@ class EvalDebugLogTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "segment_debug_logs"
+     * Test attribute "segmentDebugLogs"
      */
     public function testPropertySegmentDebugLogs()
     {

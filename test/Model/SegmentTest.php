@@ -111,7 +111,7 @@ class SegmentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "rollout_percent"
+     * Test attribute "rolloutPercent"
      */
     public function testPropertyRolloutPercent()
     {

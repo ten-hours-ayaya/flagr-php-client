@@ -28,6 +28,9 @@
 
 namespace Ayaya\FlagrClient;
 
+
+use Ayaya\FlagrClient\Model\ModelInterface;
+
 /**
  * ObjectSerializer Class Doc Comment
  *
@@ -57,7 +60,7 @@ class ObjectSerializer
                 $data[$property] = self::sanitizeForSerialization($value);
             }
             return $data;
-        } elseif (is_object($data)) {
+        } elseif (is_object($data) && $data instanceof ModelInterface) {
             $values = [];
             $formats = $data::swaggerFormats();
             foreach ($data::swaggerTypes() as $property => $swaggerType) {
@@ -75,6 +78,8 @@ class ObjectSerializer
                 }
             }
             return (object)$values;
+        } elseif (is_object($data)) {
+            return json_encode($data);
         } else {
             return (string)$data;
         }

@@ -76,49 +76,49 @@ class EvalContextTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "entity_id"
+     * Test attribute "entityID"
      */
-    public function testPropertyEntityId()
+    public function testPropertyEntityID()
     {
     }
 
     /**
-     * Test attribute "entity_type"
+     * Test attribute "entityType"
      */
     public function testPropertyEntityType()
     {
     }
 
     /**
-     * Test attribute "entity_context"
+     * Test attribute "entityContext"
      */
     public function testPropertyEntityContext()
     {
     }
 
     /**
-     * Test attribute "enable_debug"
+     * Test attribute "enableDebug"
      */
     public function testPropertyEnableDebug()
     {
     }
 
     /**
-     * Test attribute "flag_id"
+     * Test attribute "flagID"
      */
-    public function testPropertyFlagId()
+    public function testPropertyFlagID()
     {
     }
 
     /**
-     * Test attribute "flag_key"
+     * Test attribute "flagKey"
      */
     public function testPropertyFlagKey()
     {
     }
 
     /**
-     * Test attribute "flag_tags"
+     * Test attribute "flagTags"
      */
     public function testPropertyFlagTags()
     {

@@ -90,16 +90,16 @@ class DistributionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "variant_key"
+     * Test attribute "variantKey"
      */
     public function testPropertyVariantKey()
     {
     }
 
     /**
-     * Test attribute "variant_id"
+     * Test attribute "variantID"
      */
-    public function testPropertyVariantId()
+    public function testPropertyVariantID()
     {
     }
 }

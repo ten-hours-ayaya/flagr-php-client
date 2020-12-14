@@ -76,56 +76,56 @@ class EvalResultTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "flag_id"
+     * Test attribute "flagID"
      */
-    public function testPropertyFlagId()
+    public function testPropertyFlagID()
     {
     }
 
     /**
-     * Test attribute "flag_key"
+     * Test attribute "flagKey"
      */
     public function testPropertyFlagKey()
     {
     }
 
     /**
-     * Test attribute "flag_snapshot_id"
+     * Test attribute "flagSnapshotID"
      */
-    public function testPropertyFlagSnapshotId()
+    public function testPropertyFlagSnapshotID()
     {
     }
 
     /**
-     * Test attribute "segment_id"
+     * Test attribute "segmentID"
      */
-    public function testPropertySegmentId()
+    public function testPropertySegmentID()
     {
     }
 
     /**
-     * Test attribute "variant_id"
+     * Test attribute "variantID"
      */
-    public function testPropertyVariantId()
+    public function testPropertyVariantID()
     {
     }
 
     /**
-     * Test attribute "variant_key"
+     * Test attribute "variantKey"
      */
     public function testPropertyVariantKey()
     {
     }
 
     /**
-     * Test attribute "variant_attachment"
+     * Test attribute "variantAttachment"
      */
     public function testPropertyVariantAttachment()
     {
     }
 
     /**
-     * Test attribute "eval_context"
+     * Test attribute "evalContext"
      */
     public function testPropertyEvalContext()
     {
@@ -139,7 +139,7 @@ class EvalResultTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "eval_debug_log"
+     * Test attribute "evalDebugLog"
      */
     public function testPropertyEvalDebugLog()
     {

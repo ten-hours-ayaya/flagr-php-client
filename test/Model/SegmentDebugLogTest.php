@@ -76,9 +76,9 @@ class SegmentDebugLogTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "segment_id"
+     * Test attribute "segmentID"
      */
-    public function testPropertySegmentId()
+    public function testPropertySegmentID()
     {
     }
 

@@ -83,7 +83,7 @@ class FlagSnapshotTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "updated_by"
+     * Test attribute "updatedBy"
      */
     public function testPropertyUpdatedBy()
     {
@@ -97,7 +97,7 @@ class FlagSnapshotTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "updated_at"
+     * Test attribute "updatedAt"
      */
     public function testPropertyUpdatedAt()
     {

@@ -83,28 +83,28 @@ class EvaluationBatchRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "enable_debug"
+     * Test attribute "enableDebug"
      */
     public function testPropertyEnableDebug()
     {
     }
 
     /**
-     * Test attribute "flag_i_ds"
+     * Test attribute "flagIDs"
      */
     public function testPropertyFlagIDs()
     {
     }
 
     /**
-     * Test attribute "flag_keys"
+     * Test attribute "flagKeys"
      */
     public function testPropertyFlagKeys()
     {
     }
 
     /**
-     * Test attribute "flag_tags"
+     * Test attribute "flagTags"
      */
     public function testPropertyFlagTags()
     {

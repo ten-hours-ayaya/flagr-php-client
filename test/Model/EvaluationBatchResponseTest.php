@@ -76,7 +76,7 @@ class EvaluationBatchResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "evaluation_results"
+     * Test attribute "evaluationResults"
      */
     public function testPropertyEvaluationResults()
     {
