@@ -79,7 +79,7 @@ class ObjectSerializer
             }
             return (object)$values;
         } elseif (is_object($data)) {
-            return json_encode($data);
+            return $data;
         } else {
             return (string)$data;
         }
